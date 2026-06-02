@@ -22,8 +22,8 @@ flowchart LR
 flowchart TD
     subgraph PROD["UnripePlum/korean-wakeword<br/>public"]
         A["README and docs"]
-        B["microWakeWordsKorean/<slug>.json"]
-        C["microWakeWordsKorean/<slug>.tflite"]
+        B["wakeword-ko/<slug>.json"]
+        C["wakeword-ko/<slug>.tflite"]
         D["wake_word_manifest.json"]
         E["manifest generator / validation"]
     end
@@ -58,8 +58,8 @@ Prod does not own:
 Each successful trainer job writes:
 
 ```text
-microWakeWordsKorean/<artifact_slug>.json
-microWakeWordsKorean/<artifact_slug>.tflite
+wakeword-ko/<artifact_slug>.json
+wakeword-ko/<artifact_slug>.tflite
 ```
 
 Then it updates:

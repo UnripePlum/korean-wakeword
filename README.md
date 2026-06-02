@@ -36,8 +36,8 @@ The private collector receives the request, the private trainer generates the mo
 ## Published Files
 
 ```text
-microWakeWordsKorean/<artifact_slug>.json
-microWakeWordsKorean/<artifact_slug>.tflite
+wakeword-ko/<artifact_slug>.json
+wakeword-ko/<artifact_slug>.tflite
 wake_word_manifest.json
 ```
 

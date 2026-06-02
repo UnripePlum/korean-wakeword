@@ -15,8 +15,8 @@ UnripePlum/korean-wakeword-trainer
 Each successful job writes:
 
 ```text
-microWakeWordsKorean/<artifact_slug>.json
-microWakeWordsKorean/<artifact_slug>.tflite
+wakeword-ko/<artifact_slug>.json
+wakeword-ko/<artifact_slug>.tflite
 ```
 
 Then it regenerates:
