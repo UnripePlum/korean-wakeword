@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs and runtime state
+*.log
+.cache/
+tmp/
+
+# Local runner and trainer state
+_work/
+actions-runner/
+trained_wake_words/
+training_runs/
+datasets/
+downloads/
+trainer_checkout/
+publisher_checkout/
+
+# Private research material and copied source notes
+docs/research/
+docs/source-materials/
+docs/raw/
+docs/private/
+docs/*research*.md
+docs/*source-project*.md
+docs/*investigation*.md
+
