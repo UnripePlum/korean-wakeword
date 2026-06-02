@@ -14,7 +14,7 @@ flowchart LR
     X["GitHub user"] --> C["prod issue<br/>요청: 자비스"]
     B --> C
     C --> D["trainer<br/>private self-hosted runner"]
-    D --> E["wakeword-ko artifacts<br/>manifest"]
+    D --> E["wakeword/date artifacts<br/>manifest"]
     E --> C
     C --> B
     B --> A
@@ -28,8 +28,8 @@ flowchart TD
     subgraph PROD["UnripePlum/korean-wakeword<br/>public"]
         A["README and docs"]
         B["Issues<br/>요청: <wakeword>"]
-        C["wakeword-ko/<slug>.json"]
-        D["wakeword-ko/<slug>.tflite"]
+        C["wakeword/<date>/<slug>.json"]
+        D["wakeword/<date>/<slug>.tflite"]
         E["wake_word_manifest.json"]
         F["manifest generator / validation"]
     end
@@ -65,8 +65,8 @@ Prod does not own:
 Each successful trainer job writes:
 
 ```text
-wakeword-ko/<artifact_slug>.json
-wakeword-ko/<artifact_slug>.tflite
+wakeword/<generation_start_date>/<artifact_slug>.json
+wakeword/<generation_start_date>/<artifact_slug>.tflite
 ```
 
 Then it updates:
@@ -74,6 +74,10 @@ Then it updates:
 ```text
 wake_word_manifest.json
 ```
+
+`generation_start_date` is the date when trainer generation starts, formatted as `YYYY-MM-DD`.
+
+The model JSON must include `trainer_version`.
 
 ## Source of Writes
 

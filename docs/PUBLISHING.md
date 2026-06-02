@@ -15,8 +15,8 @@ UnripePlum/korean-wakeword-trainer
 Each successful job writes:
 
 ```text
-wakeword-ko/<artifact_slug>.json
-wakeword-ko/<artifact_slug>.tflite
+wakeword/<generation_start_date>/<artifact_slug>.json
+wakeword/<generation_start_date>/<artifact_slug>.tflite
 ```
 
 Then it regenerates:
@@ -31,12 +31,16 @@ Each model JSON should include:
 
 - Korean display wakeword;
 - matching `.tflite` path;
+- generation start date;
+- trainer version;
 - trained language `ko`;
 - probability cutoff;
 - sliding window size;
 - feature step size;
 - tensor arena size;
 - quality metrics when available.
+
+`trainer_version` is required. A model JSON without `trainer_version` is invalid.
 
 ## Forbidden Public Data
 
