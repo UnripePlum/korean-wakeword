@@ -4,7 +4,8 @@ flowchart LR
     COLLECTOR --> ISSUE
     MAINTAINER["Maintainer approval"] --> ISSUE
     ISSUE --> TRAINER["Private trainer"]
-    TRAINER --> ARTIFACTS["Model artifacts"]
+    QWEN["Qwen TTS provider"] --> TRAINER
+    TRAINER --> ARTIFACTS["Model artifacts plus TTS metadata"]
     TRAINER --> RESULT["Metrics comment"]
     ARTIFACTS --> MANIFEST["Public manifest"]
     MANIFEST --> USERS["Model users"]

@@ -84,7 +84,7 @@ jarvis/2026-06-02/jarvis.tflite
 
 ### Model JSON
 
-The model JSON must include `trainer_version`.
+The model JSON must include `trainer_version` and public-safe TTS generation metadata.
 
 Recommended shape:
 
@@ -104,6 +104,13 @@ Recommended shape:
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer"
+  },
+  "data_generation": {
+    "tts_provider": "qwen",
+    "tts_model": "qwen-tts",
+    "positive_sample_count": 240,
+    "voice_variant_count": 8,
+    "dataset_manifest_hash": "sha256:example"
   },
   "metrics": {
     "recall": 0.91,
@@ -149,5 +156,6 @@ Do not attach a self-hosted runner to this repository. The public repository can
 - Threads polling.
 - Follower verification.
 - Local training execution.
+- Qwen TTS execution or generated audio storage.
 - Self-hosted runner configuration.
 - Private logs, caches, or secrets.

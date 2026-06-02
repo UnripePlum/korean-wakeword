@@ -36,6 +36,7 @@ Each model JSON should include:
 - generation start date;
 - trainer version;
 - trained language `ko`;
+- public-safe Qwen TTS generation metadata;
 - probability cutoff;
 - sliding window size;
 - feature step size;
@@ -43,6 +44,14 @@ Each model JSON should include:
 - quality metrics when available.
 
 `trainer_version` is required. A model JSON without `trainer_version` is invalid.
+
+TTS metadata should identify how positive samples were generated without exposing private data:
+
+- `data_generation.tts_provider`: `qwen`;
+- `data_generation.tts_model`;
+- `data_generation.positive_sample_count`;
+- `data_generation.voice_variant_count`;
+- `data_generation.dataset_manifest_hash`, when available.
 
 ## Forbidden Public Data
 
@@ -52,6 +61,8 @@ Do not publish:
 - GitHub tokens;
 - private collector payloads;
 - private trainer internals beyond a public-safe reference;
+- raw Qwen TTS generated audio;
+- Qwen TTS tokens, prompts, request logs, or private cache paths;
 - raw user audio unless explicitly intended and licensed;
 - local filesystem paths;
 - copied external source material.
