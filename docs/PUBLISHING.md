@@ -1,11 +1,13 @@
 # Artifact Storage Contract
 
-The public worker stores finished artifacts in this same repository.
+This repository stores finished Korean wakeword artifacts.
 
-Public repository:
+## Writer
+
+Artifacts are written by the private trainer repository:
 
 ```text
-UnripePlum/korean-wakeword
+UnripePlum/korean-wakeword-trainer
 ```
 
 ## Stored Files
@@ -23,74 +25,27 @@ Then it regenerates:
 wake_word_manifest.json
 ```
 
-## Commit Message
+## Required Metadata
 
-Use a machine-readable commit message:
+Each model JSON should include:
 
-```text
-Add Korean wakeword: <normalized_phrase> (<artifact_slug>)
-
-Source: threads
-Worker-Issue: UnripePlum/korean-wakeword#<issue_number>
-Metrics: recall=<value>, faph=<value>
-```
-
-## Metrics Gate
-
-Default production thresholds:
-
-- recall: `>= 0.85`
-- false accepts per hour: `<= 1.0`
-- raw positive detection rate, when available: `>= 0.80`
-- raw negative detections, when available: `0`
-
-If a job misses the gate:
-
-- do not publish by default;
-- add `failed`;
-- comment metrics and failure reason on the worker issue;
-- let the request collector mirror the failure back to Threads.
-
-Experimental publication may be added later with a separate `experimental` label.
-
-## Manifest Requirements
-
-The model JSON should include runtime fields needed by micro wake word firmware:
-
-- wake word display text;
-- model path;
+- Korean display wakeword;
+- matching `.tflite` path;
 - trained language `ko`;
 - probability cutoff;
 - sliding window size;
 - feature step size;
-- tensor arena size.
+- tensor arena size;
+- quality metrics when available.
 
-The repository manifest should expose the raw GitHub URL for each model JSON.
+## Forbidden Public Data
 
-## Conflict Handling
+Do not publish:
 
-If pushing to the repository fails because `deploy` moved:
-
-1. fetch and rebase once;
-2. regenerate manifest;
-3. retry push once;
-4. fail with `publish_conflict` if it still fails.
-
-## Public Metadata
-
-Published metadata may include:
-
-- display phrase;
-- artifact slug;
-- metrics;
-- model version;
-- language;
-- generation timestamp.
-
-Published metadata must not include:
-
-- Threads access tokens;
-- broad-scope GitHub tokens;
+- Threads tokens;
+- GitHub tokens;
 - private collector payloads;
-- unnecessary requester IDs;
-- local filesystem paths.
+- trainer issue internals beyond a public-safe reference;
+- raw user audio unless explicitly intended and licensed;
+- local filesystem paths;
+- copied external source material.

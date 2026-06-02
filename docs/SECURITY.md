@@ -1,57 +1,42 @@
 # Security Notes
 
-## Main Boundary
+## Repository Role
 
-This public repository owns the local Apple Silicon self-hosted runner workflow. Treat the runner as privileged.
+This repository is public. It should contain public docs, public code, and finished model artifacts only.
 
-The private request collector may create issues here, but issue creation alone must not start training.
+## No Self-Hosted Runner
 
-## Allowed Training Trigger
+Do not attach a self-hosted runner to this repository.
 
-Training may run only when all conditions are true:
+Self-hosted execution belongs to:
 
-- event is `issues.labeled`;
-- added label is `ready-to-train`;
-- label was applied by the private request collector token or a maintainer;
-- issue title starts with `요청:`;
-- issue body JSON validates against the expected schema;
-- job runs on `[self-hosted, macOS, ARM64, wakeword-trainer]`.
+```text
+UnripePlum/korean-wakeword-trainer
+```
 
-## Forbidden Triggers
+## Public Issue Policy
 
-Do not run training from:
+Public issues here are for:
 
-- `pull_request`;
-- `pull_request_target`;
-- arbitrary `issues.opened`;
-- issue comments containing commands;
-- user-edited workflow files.
+- published model bugs;
+- compatibility reports;
+- documentation corrections;
+- artifact removal or rename requests.
 
-Public users may open issues in this repository, but public issue creation must never start local training.
+Opening a public issue here must not start training.
 
-## Input Handling
+## Secret Boundary
 
-Threads replies and GitHub issue fields are untrusted data.
+Do not store:
 
-Rules:
+- Threads tokens;
+- GitHub publishing tokens;
+- self-hosted runner tokens;
+- private request mappings;
+- local trainer logs;
+- local trainer caches.
 
-- Do not interpolate requested wakewords into shell commands.
-- Pass trainer arguments as structured argument arrays.
-- Recompute or validate `artifact_slug` locally.
-- Reject URLs, control characters, empty phrases, and unsafe payloads.
-- Never trust the issue title as the only data source.
+## Related Docs
 
-## Secrets
-
-- Keep GitHub tokens in repository or environment secrets.
-- Do not store Threads tokens in the worker repository; Threads status belongs to the private request collector.
-- Do not write tokens to logs, issues, comments, or model artifacts.
-- Scope the publishing token to `UnripePlum/korean-wakeword`.
-- Prefer a dedicated local runner user on the Mac.
-
-## Related Contracts
-
-- [Issue contract](ISSUE_CONTRACT.md)
-- [Runner workflow](RUNNER_WORKFLOW.md)
-- [Publishing contract](PUBLISHING.md)
-- [Branching policy](BRANCHING.md)
+- [Architecture](ARCHITECTURE.md)
+- [Artifact storage contract](PUBLISHING.md)

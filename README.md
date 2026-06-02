@@ -1,36 +1,48 @@
 # Korean Wakeword
 
-Public worker and artifact repository for the Korean wakeword generator.
+Public prod repository for Korean micro wake word models.
 
 This repository owns:
 
-- public GitHub issue queue;
-- local Apple Silicon self-hosted runner workflow;
-- Korean wakeword training wrapper;
-- metrics extraction;
-- storing finished wakeword artifacts;
-- worker issue status updates.
+- public README and user-facing docs;
+- published Korean wakeword model artifacts;
+- `wake_word_manifest.json`;
+- manifest generation/validation code;
+- open-source project code that is safe to publish.
 
-The request collector repository creates issues here:
+It does not own:
+
+- Threads tokens;
+- requester eligibility state;
+- self-hosted runner registration;
+- local training secrets;
+- private training issues.
+
+Related repositories:
+
+- `UnripePlum/korean-wakeword-request-collector`: private Threads request collector.
+- `UnripePlum/korean-wakeword-trainer`: private training runner and execution queue.
+
+## Request Flow
+
+Users request a wakeword on Threads:
 
 ```text
-https://github.com/UnripePlum/korean-wakeword-request-collector
+요청: 자비스
 ```
 
-Finished `.json` and `.tflite` files are published into this repository after generation passes validation.
+The private collector receives the request, the private trainer generates the model, and finished artifacts are committed here.
 
-## Branches
+## Published Files
 
-- `develop`: development branch for worker code and tests.
-- `deploy`: deployment branch used by the self-hosted runner.
-
-The worker keeps GitHub issue-triggered workflows on `deploy`. `deploy` is the default branch because GitHub issue events run workflows from the default branch.
+```text
+microWakeWordsKorean/<artifact_slug>.json
+microWakeWordsKorean/<artifact_slug>.tflite
+wake_word_manifest.json
+```
 
 ## Design Docs
 
 - [Architecture](docs/ARCHITECTURE.md)
-- [Issue contract](docs/ISSUE_CONTRACT.md)
-- [Runner workflow](docs/RUNNER_WORKFLOW.md)
 - [Artifact storage contract](docs/PUBLISHING.md)
-- [Branching](docs/BRANCHING.md)
 - [Security notes](docs/SECURITY.md)
