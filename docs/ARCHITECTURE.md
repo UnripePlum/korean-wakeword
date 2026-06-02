@@ -6,33 +6,20 @@
 
 It is the public request queue, source-visible project home, model artifact catalog, and user-facing documentation site for Korean wakeword models. It must not run private training jobs and must not own a self-hosted runner.
 
+This document keeps Mermaid as visible `mmd` source blocks. GitHub renders `mermaid` fences and hides the source, so prod avoids rendered Mermaid fences in this architecture document.
+
 ## System Boundary
 
 Mermaid code:
 
-```text
+```mmd
 flowchart LR
     THREADS["Threads user<br/>요청: 자비스"] --> COLLECTOR["request collector<br/>private"]
     GITHUB_USER["GitHub user"] --> ISSUE["prod issue<br/>요청: 자비스"]
     COLLECTOR --> ISSUE
     MAINTAINER["maintainer / trusted automation"] --> ISSUE
     ISSUE --> TRAINER["trainer<br/>private self-hosted runner"]
-    TRAINER --> ARTIFACTS["artifact commit<br/><slug>/<date>/<slug>.json<br/><slug>/<date>/<slug>.tflite"]
-    TRAINER --> COMMENT["issue result comment<br/>metrics + model links"]
-    ARTIFACTS --> MANIFEST["wake_word_manifest.json"]
-    MANIFEST --> USERS["users<br/>ESPHome / Home Assistant"]
-    COMMENT --> COLLECTOR
-    COLLECTOR --> THREADS
-```
-
-```mermaid
-flowchart LR
-    THREADS["Threads user<br/>요청: 자비스"] --> COLLECTOR["request collector<br/>private"]
-    GITHUB_USER["GitHub user"] --> ISSUE["prod issue<br/>요청: 자비스"]
-    COLLECTOR --> ISSUE
-    MAINTAINER["maintainer / trusted automation"] --> ISSUE
-    ISSUE --> TRAINER["trainer<br/>private self-hosted runner"]
-    TRAINER --> ARTIFACTS["artifact commit<br/><slug>/<date>/<slug>.json<br/><slug>/<date>/<slug>.tflite"]
+    TRAINER --> ARTIFACTS["artifact commit<br/>{slug}/{date}/{slug}.json<br/>{slug}/{date}/{slug}.tflite"]
     TRAINER --> COMMENT["issue result comment<br/>metrics + model links"]
     ARTIFACTS --> MANIFEST["wake_word_manifest.json"]
     MANIFEST --> USERS["users<br/>ESPHome / Home Assistant"]
@@ -46,35 +33,14 @@ Public issues are visible and editable by users. Training still starts only afte
 
 Mermaid code:
 
-```text
+```mmd
 flowchart TD
     subgraph PROD["korean-wakeword public repo"]
         DOCS["README + docs"]
         ISSUES["GitHub issues<br/>public request queue"]
         LABELS["label contract<br/>queued / ready-to-train / training / published / failed"]
         SCHEMA["artifact JSON schema"]
-        TREE["artifact tree<br/><slug>/<date>/<slug>.*"]
-        MANIFEST["wake_word_manifest.json"]
-        VALIDATOR["validation scripts"]
-        TEMPLATES["issue templates"]
-    end
-
-    ISSUES --> LABELS
-    TREE --> MANIFEST
-    SCHEMA --> VALIDATOR
-    TREE --> VALIDATOR
-    MANIFEST --> VALIDATOR
-    DOCS --> TEMPLATES
-```
-
-```mermaid
-flowchart TD
-    subgraph PROD["korean-wakeword public repo"]
-        DOCS["README + docs"]
-        ISSUES["GitHub issues<br/>public request queue"]
-        LABELS["label contract<br/>queued / ready-to-train / training / published / failed"]
-        SCHEMA["artifact JSON schema"]
-        TREE["artifact tree<br/><slug>/<date>/<slug>.*"]
+        TREE["artifact tree<br/>{slug}/{date}/{slug}.*"]
         MANIFEST["wake_word_manifest.json"]
         VALIDATOR["validation scripts"]
         TEMPLATES["issue templates"]
@@ -194,20 +160,7 @@ Recommended shape:
 
 Mermaid code:
 
-```text
-stateDiagram-v2
-    [*] --> Queued: issue created
-    Queued --> ReadyToTrain: trusted approval
-    Queued --> Rejected: invalid request
-    ReadyToTrain --> Training: trainer claims issue
-    Training --> Published: artifacts committed
-    Training --> Failed: training or quality gate failed
-    Failed --> ReadyToTrain: trusted retry
-    Published --> [*]
-    Rejected --> [*]
-```
-
-```mermaid
+```mmd
 stateDiagram-v2
     [*] --> Queued: issue created
     Queued --> ReadyToTrain: trusted approval
@@ -224,24 +177,7 @@ stateDiagram-v2
 
 Mermaid code:
 
-```text
-flowchart TD
-    COLLECTOR["collector token"] --> CREATE["create Threads-originated issues"]
-    COLLECTOR --> TRUSTED_LABEL["add ready-to-train<br/>after follower verification"]
-    MAINTAINER["maintainer"] --> GITHUB_LABEL["approve GitHub-originated issues"]
-    TRAINER["trainer token"] --> CLAIM["add training / failed / published labels"]
-    TRAINER --> PUSH["push artifacts and manifest"]
-    TRAINER --> COMMENT["write result comments"]
-
-    CREATE --> ISSUE["prod issue"]
-    TRUSTED_LABEL --> ISSUE
-    GITHUB_LABEL --> ISSUE
-    CLAIM --> ISSUE
-    PUSH --> ARTIFACTS["artifact tree"]
-    COMMENT --> ISSUE
-```
-
-```mermaid
+```mmd
 flowchart TD
     COLLECTOR["collector token"] --> CREATE["create Threads-originated issues"]
     COLLECTOR --> TRUSTED_LABEL["add ready-to-train<br/>after follower verification"]
