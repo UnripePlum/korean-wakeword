@@ -1,5 +1,49 @@
 {
-  "model_count": 0,
-  "models": [],
+  "model_count": 1,
+  "models": [
+    {
+      "artifact": {
+        "generation_start_date": "2026-06-02",
+        "json_path": "jarvisvd240/2026-06-02/jarvisvd240.json",
+        "model_path": "jarvisvd240/2026-06-02/jarvisvd240.tflite"
+      },
+      "data_generation": {
+        "positive_sample_count": 240,
+        "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "tts_provider": "qwen",
+        "voice_variant_count": 4
+      },
+      "metrics": {
+        "false_accepts_per_hour": 0.714076,
+        "raw_negative_detections": 0,
+        "raw_positive_detection_rate": 0.9,
+        "recall": 0.96
+      },
+      "request": {
+        "prod_issue": 9007,
+        "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/9007",
+        "source": "threads"
+      },
+      "runtime": {
+        "feature_step_size": 10,
+        "minimum_esphome_version": "2024.7.0",
+        "probability_cutoff": 0.72,
+        "sliding_window_size": 3,
+        "tensor_arena_size": 30000
+      },
+      "schema_version": 1,
+      "trainer": {
+        "source": "UnripePlum/korean-wakeword-trainer",
+        "trainer_version": "local-vd240",
+        "training_duration_minutes": 24.47,
+        "training_duration_seconds": 1468.114
+      },
+      "wakeword": {
+        "display": "자비스",
+        "language": "ko",
+        "slug": "jarvisvd240"
+      }
+    }
+  ],
   "schema_version": 1
 }
