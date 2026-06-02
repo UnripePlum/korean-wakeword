@@ -45,3 +45,9 @@ Rules:
 - Scope the publishing token to `UnripePlum/korean-wakeword`.
 - Prefer a dedicated local runner user on the Mac.
 
+## Related Contracts
+
+- [Issue contract](ISSUE_CONTRACT.md)
+- [Runner workflow](RUNNER_WORKFLOW.md)
+- [Publishing contract](PUBLISHING.md)
+- [Threads intake](THREADS_INTAKE.md)
