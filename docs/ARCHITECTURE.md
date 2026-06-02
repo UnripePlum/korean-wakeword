@@ -10,15 +10,15 @@ It is the public request queue, source-visible project home, model artifact cata
 
 ```mermaid
 flowchart LR
-    THREADS["Threads request"] --> COLLECTOR["Collector"]
-    GITHUB_USER["GitHub user"] --> ISSUE["Prod issue"]
+    THREADS["Threads request"] --> COLLECTOR["Private collector"]
+    GITHUB_USER["GitHub user"] --> ISSUE["Public prod issue"]
     COLLECTOR --> ISSUE
     MAINTAINER["Maintainer"] --> ISSUE
-    ISSUE --> TRAINER["Trainer"]
-    TRAINER --> ARTIFACTS["Artifacts"]
-    TRAINER --> RESULT["Issue result"]
-    ARTIFACTS --> MANIFEST["Manifest"]
-    MANIFEST --> USERS["Users"]
+    ISSUE --> TRAINER["Private trainer"]
+    TRAINER --> ARTIFACTS["Model artifacts"]
+    TRAINER --> RESULT["Metrics comment"]
+    ARTIFACTS --> MANIFEST["Public manifest"]
+    MANIFEST --> USERS["Model users"]
     RESULT --> COLLECTOR
     COLLECTOR --> THREADS
 ```
@@ -31,12 +31,12 @@ Public issues are visible and editable by users. Training still starts only afte
 flowchart TD
     subgraph PROD["korean-wakeword"]
         DOCS["README and docs"]
-        ISSUES["Public issues"]
-        LABELS["Issue labels"]
-        SCHEMA["JSON schema"]
-        TREE["Artifact tree"]
-        MANIFEST["Manifest"]
-        VALIDATOR["Validator"]
+        ISSUES["Public request issues"]
+        LABELS["Queue label contract"]
+        SCHEMA["Model JSON schema"]
+        TREE["Date based artifact tree"]
+        MANIFEST["wake_word_manifest.json"]
+        VALIDATOR["Validation scripts"]
         TEMPLATES["Issue templates"]
     end
 
@@ -169,12 +169,12 @@ stateDiagram-v2
 
 ```mermaid
 flowchart TD
-    COLLECTOR["Collector token"] --> CREATE["Create issue"]
-    COLLECTOR --> TRUSTED_LABEL["Add ready-to-train"]
+    COLLECTOR["Collector token"] --> CREATE["Create Threads issue"]
+    COLLECTOR --> TRUSTED_LABEL["Add trusted label"]
     MAINTAINER["Maintainer"] --> GITHUB_LABEL["Approve GitHub issue"]
-    TRAINER["Trainer token"] --> CLAIM["Update labels"]
-    TRAINER --> PUSH["Push artifacts"]
-    TRAINER --> COMMENT["Write result"]
+    TRAINER["Trainer token"] --> CLAIM["Claim or close issue"]
+    TRAINER --> PUSH["Push model artifacts"]
+    TRAINER --> COMMENT["Write metrics result"]
 
     CREATE --> ISSUE["Prod issue"]
     TRUSTED_LABEL --> ISSUE
