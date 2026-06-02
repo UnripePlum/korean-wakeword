@@ -2,9 +2,9 @@
 
 ## Main Boundary
 
-This repository owns the local Apple Silicon self-hosted runner. Treat it as privileged.
+This public repository owns the local Apple Silicon self-hosted runner workflow. Treat the runner as privileged.
 
-The public distribution repository must not have access to the training runner.
+The public distribution repository must not have access to the training runner. The private request collector may create issues here, but issue creation alone must not start training.
 
 ## Allowed Training Trigger
 
@@ -12,6 +12,7 @@ Training may run only when all conditions are true:
 
 - event is `issues.labeled`;
 - added label is `ready-to-train`;
+- label was applied by the private request collector token or a maintainer;
 - issue title starts with `요청:`;
 - issue body JSON validates against the expected schema;
 - job runs on `[self-hosted, macOS, ARM64, wakeword-trainer]`.
@@ -25,6 +26,8 @@ Do not run training from:
 - arbitrary `issues.opened`;
 - issue comments containing commands;
 - user-edited workflow files.
+
+Public users may open issues in this repository, but public issue creation must never start local training.
 
 ## Input Handling
 
@@ -40,7 +43,8 @@ Rules:
 
 ## Secrets
 
-- Keep Threads and GitHub tokens in repository or environment secrets.
+- Keep GitHub tokens in repository or environment secrets.
+- Do not store Threads tokens in the worker repository; Threads status belongs to the private request collector.
 - Do not write tokens to logs, issues, comments, or model artifacts.
 - Scope the publishing token to `UnripePlum/korean-wakeword`.
 - Prefer a dedicated local runner user on the Mac.
@@ -50,4 +54,4 @@ Rules:
 - [Issue contract](ISSUE_CONTRACT.md)
 - [Runner workflow](RUNNER_WORKFLOW.md)
 - [Publishing contract](PUBLISHING.md)
-- [Threads intake](THREADS_INTAKE.md)
+- [Branching policy](BRANCHING.md)

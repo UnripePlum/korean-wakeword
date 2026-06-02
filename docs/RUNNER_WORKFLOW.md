@@ -8,7 +8,9 @@ The local training runner must use these labels:
 runs-on: [self-hosted, macOS, ARM64, wakeword-trainer]
 ```
 
-The runner belongs only to the private `korean-wakeword-ops` repository.
+The runner belongs only to `korean-wakeword-worker`.
+
+The repository is public, so the runner must rely on the trusted `ready-to-train` label boundary and validated issue payloads.
 
 ## Trigger
 
@@ -30,7 +32,7 @@ The workflow should be thin.
 
 It should:
 
-1. checkout `korean-wakeword-ops`;
+1. checkout `korean-wakeword-worker`;
 2. set up Python if needed;
 3. call one wrapper script;
 4. upload sanitized logs only if needed.
@@ -68,9 +70,8 @@ If the lock is held:
 
 Required secrets or environment values:
 
-- `GH_TOKEN`: token for private issue updates.
+- `GH_TOKEN`: token for worker issue updates.
 - `PUBLISH_GH_TOKEN`: token scoped to publish into `UnripePlum/korean-wakeword`.
-- `THREADS_ACCESS_TOKEN`: token for status replies.
 - `DISTRIBUTION_REPO`: `UnripePlum/korean-wakeword`.
 - `TRAINER_ROOT`: local checkout path for the Apple Silicon trainer.
 
@@ -103,4 +104,3 @@ Forbidden in logs:
 - raw authorization headers;
 - private platform IDs when not necessary;
 - full local cache paths containing secrets.
-

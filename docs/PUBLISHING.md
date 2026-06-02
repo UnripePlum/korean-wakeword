@@ -1,6 +1,6 @@
 # Publishing Contract
 
-The private ops repository publishes finished artifacts to the public distribution repository.
+The public worker repository publishes finished artifacts to the public distribution repository.
 
 Public repository:
 
@@ -31,7 +31,7 @@ Use a machine-readable commit message:
 Add Korean wakeword: <normalized_phrase> (<artifact_slug>)
 
 Source: threads
-Ops-Issue: UnripePlum/korean-wakeword-ops#<issue_number>
+Worker-Issue: UnripePlum/korean-wakeword-worker#<issue_number>
 Metrics: recall=<value>, faph=<value>
 ```
 
@@ -48,8 +48,8 @@ If a job misses the gate:
 
 - do not publish by default;
 - add `failed`;
-- comment metrics and failure reason on the private issue;
-- reply to Threads with a failure message.
+- comment metrics and failure reason on the worker issue;
+- let the request collector mirror the failure back to Threads.
 
 Experimental publication may be added later with a separate `experimental` label.
 
@@ -90,8 +90,7 @@ Published metadata may include:
 Published metadata must not include:
 
 - Threads access tokens;
-- private GitHub tokens;
-- raw private issue payloads;
+- broad-scope GitHub tokens;
+- private collector payloads;
 - unnecessary requester IDs;
 - local filesystem paths.
-
