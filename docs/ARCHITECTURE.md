@@ -19,48 +19,55 @@ The public distribution repository is `UnripePlum/korean-wakeword`.
 
 ## High-Level Flow
 
-```text
-Threads reply
-  "요청: 자비스"
-      |
-      v
-threads_bridge
-  - fetch replies
-  - parse 요청:
-  - check requester eligibility
-  - normalize phrase
-  - compute artifact slug
-  - deduplicate by Threads reply ID
-      |
-      v
-private GitHub issue
-  title: "요청: 자비스"
-  body: request JSON
-  labels: queued, ready-to-train
-      |
-      v
-GitHub Actions
-  event: issues.labeled
-  runner: [self-hosted, macOS, ARM64, wakeword-trainer]
-      |
-      v
-training wrapper
-  - validate issue payload again
-  - acquire local training lock
-  - invoke Korean trainer
-  - extract metrics
-  - enforce quality gate
-      |
-      v
-publisher
-  - copy .json/.tflite into public checkout
-  - regenerate manifest
-  - commit and push to UnripePlum/korean-wakeword
-      |
-      v
-status mirror
-  - comment on private issue
-  - reply to original Threads comment
+```mermaid
+flowchart TD
+    A["Threads reply<br/>요청: 자비스"]
+
+    subgraph BRIDGE["threads_bridge"]
+        B1["Fetch replies"]
+        B2["Parse 요청:"]
+        B3["Check requester eligibility"]
+        B4["Normalize phrase"]
+        B5["Compute artifact slug"]
+        B6["Deduplicate by Threads reply ID"]
+    end
+
+    subgraph ISSUE["Private GitHub issue"]
+        C1["Title: 요청: 자비스"]
+        C2["Body: request JSON"]
+        C3["Labels: queued, ready-to-train"]
+    end
+
+    subgraph ACTIONS["GitHub Actions"]
+        D1["Event: issues.labeled"]
+        D2["Runner: self-hosted macOS ARM64"]
+    end
+
+    subgraph TRAIN["Training wrapper"]
+        E1["Validate issue payload again"]
+        E2["Acquire local training lock"]
+        E3["Invoke Korean trainer"]
+        E4["Extract metrics"]
+        E5["Enforce quality gate"]
+    end
+
+    subgraph PUBLISH["Publisher"]
+        F1["Copy .json/.tflite into public checkout"]
+        F2["Regenerate manifest"]
+        F3["Commit and push to UnripePlum/korean-wakeword"]
+    end
+
+    subgraph STATUS["Status mirror"]
+        G1["Comment on private issue"]
+        G2["Reply to original Threads comment"]
+    end
+
+    A --> B1 --> B2 --> B3 --> B4 --> B5 --> B6
+    B6 --> C1 --> C2 --> C3
+    C3 --> D1 --> D2
+    D2 --> E1 --> E2 --> E3 --> E4 --> E5
+    E5 --> F1 --> F2 --> F3
+    F3 --> G1 --> G2
 ```
 
 ## Components
@@ -149,24 +156,19 @@ Later strategy:
 
 ## State Machine
 
-```text
-new Threads reply
-  -> accepted
-  -> queued
-  -> ready-to-train
-  -> training
-  -> published
-
-new Threads reply
-  -> rejected
-
-ready-to-train
-  -> training
-  -> failed
-
-training
-  -> failed
-  -> ready-to-train
+```mermaid
+stateDiagram-v2
+    [*] --> NewThreadsReply
+    NewThreadsReply --> Accepted: valid 요청
+    NewThreadsReply --> Rejected: invalid or ineligible
+    Accepted --> Queued: private issue created
+    Queued --> ReadyToTrain: ready-to-train label
+    ReadyToTrain --> Training: runner starts
+    Training --> Published: metrics pass and publish succeeds
+    Training --> Failed: trainer, metrics, or publish failure
+    Failed --> ReadyToTrain: manual retry
+    Published --> [*]
+    Rejected --> [*]
 ```
 
 Labels:
