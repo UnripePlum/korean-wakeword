@@ -17,13 +17,7 @@ The request collector repository creates issues here:
 https://github.com/UnripePlum/korean-wakeword-request-collector
 ```
 
-The public distribution repository is:
-
-```text
-https://github.com/UnripePlum/korean-wakeword
-```
-
-Do not put public model artifacts here unless they are temporary training outputs. Finished `.json` and `.tflite` files are published to the public distribution repository.
+Finished `.json` and `.tflite` files are published into this repository after generation passes validation.
 
 ## Branches
 

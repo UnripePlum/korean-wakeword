@@ -1,6 +1,6 @@
 # Publishing Contract
 
-The public worker repository publishes finished artifacts to the public distribution repository.
+The public worker repository publishes finished artifacts into this same repository.
 
 Public repository:
 
@@ -31,7 +31,7 @@ Use a machine-readable commit message:
 Add Korean wakeword: <normalized_phrase> (<artifact_slug>)
 
 Source: threads
-Worker-Issue: UnripePlum/korean-wakeword-worker#<issue_number>
+Worker-Issue: UnripePlum/korean-wakeword#<issue_number>
 Metrics: recall=<value>, faph=<value>
 ```
 

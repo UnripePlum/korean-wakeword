@@ -8,7 +8,7 @@ The local training runner must use these labels:
 runs-on: [self-hosted, macOS, ARM64, wakeword-trainer]
 ```
 
-The runner belongs only to `korean-wakeword-worker`.
+The runner belongs only to `korean-wakeword`.
 
 The repository is public, so the runner must rely on the trusted `ready-to-train` label boundary and validated issue payloads.
 
@@ -32,7 +32,7 @@ The workflow should be thin.
 
 It should:
 
-1. checkout `korean-wakeword-worker`;
+1. checkout `korean-wakeword`;
 2. set up Python if needed;
 3. call one wrapper script;
 4. upload sanitized logs only if needed.

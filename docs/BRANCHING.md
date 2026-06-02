@@ -1,6 +1,6 @@
 # Branching Policy
 
-`korean-wakeword-worker` is public and has two long-lived branches.
+`korean-wakeword` is public and has two long-lived branches.
 
 ## Branches
 

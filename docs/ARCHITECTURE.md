@@ -2,9 +2,9 @@
 
 ## Role
 
-`UnripePlum/korean-wakeword-worker` is the public issue-driven worker for Korean wakeword generation.
+`UnripePlum/korean-wakeword` is the public issue-driven worker for Korean wakeword generation.
 
-It does not poll Threads. The private request collector creates public-safe issues in this repository. The worker consumes those issues, trains wakeword models on the local Apple Silicon self-hosted runner, and publishes finished artifacts to the public distribution repository.
+It does not poll Threads. The private request collector creates public-safe issues in this repository. The worker consumes those issues, trains wakeword models on the local Apple Silicon self-hosted runner, and stores finished artifacts in this same repository.
 
 ## High-Level Flow
 
@@ -39,12 +39,12 @@ flowchart TD
 
     subgraph PUBLISH["Publish result"]
         F1["Copy model JSON and TFLite"]
-        F2["Regenerate public manifest"]
-        F3["Commit to UnripePlum/korean-wakeword"]
+        F2["Regenerate manifest"]
+        F3["Commit artifacts to this repository"]
     end
 
     G["Worker issue result comment"]
-    H["Public distribution repo"]
+    H["Published model files"]
 
     A --> B1 --> B2 --> B3
     C1 -->|"release merge"| C2
@@ -66,7 +66,7 @@ The worker owns:
 - training wrapper;
 - metrics extraction;
 - quality gate;
-- publication into `UnripePlum/korean-wakeword`;
+- artifact publication into this repository;
 - worker issue comments and labels.
 
 The worker does not own:
@@ -141,7 +141,7 @@ The worker receives:
 - normalized phrase;
 - deterministic ASCII artifact slug;
 - collector request ID for idempotency and status correlation;
-- target distribution repo.
+- target publication repository.
 
 The worker must:
 
@@ -154,7 +154,7 @@ The worker must:
 
 ## Publishing
 
-Successful worker jobs publish to:
+Successful worker jobs publish into this repository:
 
 ```text
 UnripePlum/korean-wakeword

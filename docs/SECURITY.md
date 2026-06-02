@@ -4,7 +4,7 @@
 
 This public repository owns the local Apple Silicon self-hosted runner workflow. Treat the runner as privileged.
 
-The public distribution repository must not have access to the training runner. The private request collector may create issues here, but issue creation alone must not start training.
+The private request collector may create issues here, but issue creation alone must not start training.
 
 ## Allowed Training Trigger
 
