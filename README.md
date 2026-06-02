@@ -56,6 +56,21 @@ jarvis/2026-06-02/jarvis.json
 jarvis/2026-06-02/jarvis.tflite
 ```
 
+## Manifest Tooling
+
+Generate the public manifest after adding or changing artifact folders:
+
+```sh
+python scripts/manifest/generate.py --write
+```
+
+Validate tests and manifest freshness before publishing:
+
+```sh
+python -m unittest discover -s tests
+python scripts/manifest/generate.py --check
+```
+
 ## Design Docs
 
 - [Architecture](docs/ARCHITECTURE.md)

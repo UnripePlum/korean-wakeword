@@ -25,6 +25,28 @@ Then it regenerates:
 wake_word_manifest.json
 ```
 
+## Validation
+
+Run the manifest tests:
+
+```sh
+python -m unittest discover -s tests
+```
+
+Regenerate the manifest:
+
+```sh
+python scripts/manifest/generate.py --write
+```
+
+Check that the committed manifest matches the artifact folders:
+
+```sh
+python scripts/manifest/generate.py --check
+```
+
+The validator rejects artifacts with mismatched paths, invalid dates, unsafe slugs, missing `trainer.trainer_version`, non-`ko` language metadata, unsupported TTS provider metadata, missing runtime settings, local filesystem paths, and public-forbidden key names such as tokens, secrets, prompts, request logs, cache paths, or raw audio paths.
+
 ## Required Metadata
 
 `artifact_slug` is the English-safe wakeword folder name derived from the Korean phrase, for example `jarvis` or `nukjuk`. It must be lowercase ASCII and safe as a Git path segment.
