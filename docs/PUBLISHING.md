@@ -15,8 +15,8 @@ UnripePlum/korean-wakeword-trainer
 Each successful job writes:
 
 ```text
-wakeword/<generation_start_date>/<artifact_slug>.json
-wakeword/<generation_start_date>/<artifact_slug>.tflite
+<artifact_slug>/<generation_start_date>/<artifact_slug>.json
+<artifact_slug>/<generation_start_date>/<artifact_slug>.tflite
 ```
 
 Then it regenerates:
@@ -26,6 +26,8 @@ wake_word_manifest.json
 ```
 
 ## Required Metadata
+
+`artifact_slug` is the English-safe wakeword folder name derived from the Korean phrase, for example `jarvis` or `nukjuk`. It must be lowercase ASCII and safe as a Git path segment.
 
 Each model JSON should include:
 

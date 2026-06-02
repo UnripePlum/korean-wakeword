@@ -26,6 +26,8 @@ Public issues here are for:
 
 Opening a public issue here must not start training by itself. Training starts only when the private trainer sees a trusted `ready-to-train` label.
 
+Threads-originated issues get `ready-to-train` only after the private collector verifies the requester follows the owner account. GitHub-originated issues require maintainer or trusted automation approval.
+
 ## Secret Boundary
 
 Do not store:

@@ -42,16 +42,16 @@ The private collector converts Threads requests into GitHub issues here. The pri
 ## Published Files
 
 ```text
-wakeword/<generation_start_date>/<artifact_slug>.json
-wakeword/<generation_start_date>/<artifact_slug>.tflite
+<artifact_slug>/<generation_start_date>/<artifact_slug>.json
+<artifact_slug>/<generation_start_date>/<artifact_slug>.tflite
 wake_word_manifest.json
 ```
 
 Example:
 
 ```text
-wakeword/2026-06-02/ko_jabeuseu_a1b2c3d4.json
-wakeword/2026-06-02/ko_jabeuseu_a1b2c3d4.tflite
+jarvis/2026-06-02/jarvis.json
+jarvis/2026-06-02/jarvis.tflite
 ```
 
 ## Design Docs

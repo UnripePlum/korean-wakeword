@@ -14,7 +14,7 @@ flowchart LR
     X["GitHub user"] --> C["prod issue<br/>요청: 자비스"]
     B --> C
     C --> D["trainer<br/>private self-hosted runner"]
-    D --> E["wakeword/date artifacts<br/>manifest"]
+    D --> E["slug/date artifacts<br/>manifest"]
     E --> C
     C --> B
     B --> A
@@ -28,8 +28,8 @@ flowchart TD
     subgraph PROD["UnripePlum/korean-wakeword<br/>public"]
         A["README and docs"]
         B["Issues<br/>요청: <wakeword>"]
-        C["wakeword/<date>/<slug>.json"]
-        D["wakeword/<date>/<slug>.tflite"]
+        C["<slug>/<date>/<slug>.json"]
+        D["<slug>/<date>/<slug>.tflite"]
         E["wake_word_manifest.json"]
         F["manifest generator / validation"]
     end
@@ -65,8 +65,8 @@ Prod does not own:
 Each successful trainer job writes:
 
 ```text
-wakeword/<generation_start_date>/<artifact_slug>.json
-wakeword/<generation_start_date>/<artifact_slug>.tflite
+<artifact_slug>/<generation_start_date>/<artifact_slug>.json
+<artifact_slug>/<generation_start_date>/<artifact_slug>.tflite
 ```
 
 Then it updates:
@@ -76,6 +76,8 @@ wake_word_manifest.json
 ```
 
 `generation_start_date` is the date when trainer generation starts, formatted as `YYYY-MM-DD`.
+
+`artifact_slug` is the English-safe wakeword folder name derived from the Korean phrase, for example `jarvis` or `nukjuk`. It must be lowercase ASCII and safe as a Git path segment.
 
 The model JSON must include `trainer_version`.
 
@@ -105,3 +107,7 @@ Issue labels:
 - `rejected`
 
 The private trainer only executes when a trusted actor adds `ready-to-train`.
+
+For Threads-originated requests, the collector adds `ready-to-train` only after verifying that the requester follows the owner account.
+
+For GitHub-originated requests, a maintainer or trusted automation must add `ready-to-train`.
