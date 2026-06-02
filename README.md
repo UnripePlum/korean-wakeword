@@ -37,6 +37,8 @@ Use this format:
 요청: 자비스
 ```
 
+The normalized Korean wakeword must be at most 8 Hangul syllable characters.
+
 The private collector converts Threads requests into GitHub issues here. The private trainer watches approved issues here, generates the model, and commits finished artifacts back into this repository.
 
 ## Published Files
