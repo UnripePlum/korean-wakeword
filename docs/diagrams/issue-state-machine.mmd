@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Queued: issue created
+    Queued --> ReadyToTrain: trusted approval
+    Queued --> Rejected: invalid request
+    ReadyToTrain --> Training: trainer claims issue
+    Training --> Published: artifacts committed
+    Training --> Failed: quality gate failed
+    Failed --> ReadyToTrain: trusted retry
+    Published --> [*]
+    Rejected --> [*]

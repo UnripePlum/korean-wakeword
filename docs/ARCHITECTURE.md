@@ -8,45 +8,17 @@ It is the public request queue, source-visible project home, model artifact cata
 
 ## System Boundary
 
-```mermaid
-flowchart LR
-    THREADS["Threads request"] --> COLLECTOR["Private collector"]
-    GITHUB_USER["GitHub user"] --> ISSUE["Public prod issue"]
-    COLLECTOR --> ISSUE
-    MAINTAINER["Maintainer"] --> ISSUE
-    ISSUE --> TRAINER["Private trainer"]
-    TRAINER --> ARTIFACTS["Model artifacts"]
-    TRAINER --> RESULT["Metrics comment"]
-    ARTIFACTS --> MANIFEST["Public manifest"]
-    MANIFEST --> USERS["Model users"]
-    RESULT --> COLLECTOR
-    COLLECTOR --> THREADS
-```
+![System boundary](diagrams/system-boundary.svg)
+
+Source: [system-boundary.mmd](diagrams/system-boundary.mmd)
 
 Public issues are visible and editable by users. Training still starts only after a trusted actor adds `ready-to-train`.
 
 ## Internal Architecture
 
-```mermaid
-flowchart TD
-    subgraph PROD["korean-wakeword"]
-        DOCS["README and docs"]
-        ISSUES["Public request issues"]
-        LABELS["Queue label contract"]
-        SCHEMA["Model JSON schema"]
-        TREE["Date based artifact tree"]
-        MANIFEST["wake_word_manifest.json"]
-        VALIDATOR["Validation scripts"]
-        TEMPLATES["Issue templates"]
-    end
+![Internal architecture](diagrams/internal-architecture.svg)
 
-    ISSUES --> LABELS
-    TREE --> MANIFEST
-    SCHEMA --> VALIDATOR
-    TREE --> VALIDATOR
-    MANIFEST --> VALIDATOR
-    DOCS --> TEMPLATES
-```
+Source: [internal-architecture.mmd](diagrams/internal-architecture.mmd)
 
 ## External Interfaces
 
@@ -152,37 +124,15 @@ Recommended shape:
 
 ## Issue State Machine
 
-```mermaid
-stateDiagram-v2
-    [*] --> Queued: issue created
-    Queued --> ReadyToTrain: trusted approval
-    Queued --> Rejected: invalid request
-    ReadyToTrain --> Training: trainer claims issue
-    Training --> Published: artifacts committed
-    Training --> Failed: training or quality gate failed
-    Failed --> ReadyToTrain: trusted retry
-    Published --> [*]
-    Rejected --> [*]
-```
+![Issue state machine](diagrams/issue-state-machine.svg)
+
+Source: [issue-state-machine.mmd](diagrams/issue-state-machine.mmd)
 
 ## Write Permissions
 
-```mermaid
-flowchart TD
-    COLLECTOR["Collector token"] --> CREATE["Create Threads issue"]
-    COLLECTOR --> TRUSTED_LABEL["Add trusted label"]
-    MAINTAINER["Maintainer"] --> GITHUB_LABEL["Approve GitHub issue"]
-    TRAINER["Trainer token"] --> CLAIM["Claim or close issue"]
-    TRAINER --> PUSH["Push model artifacts"]
-    TRAINER --> COMMENT["Write metrics result"]
+![Write permissions](diagrams/write-permissions.svg)
 
-    CREATE --> ISSUE["Prod issue"]
-    TRUSTED_LABEL --> ISSUE
-    GITHUB_LABEL --> ISSUE
-    CLAIM --> ISSUE
-    PUSH --> ARTIFACTS["Artifact tree"]
-    COMMENT --> ISSUE
-```
+Source: [write-permissions.mmd](diagrams/write-permissions.mmd)
 
 Do not attach a self-hosted runner to this repository. The public repository can contain source code, validation scripts, and artifact metadata, but execution belongs to the private trainer repo.
 

@@ -1,0 +1,18 @@
+flowchart TD
+    subgraph PROD["Public prod repository"]
+        DOCS["README and docs"]
+        ISSUES["Public request issues"]
+        LABELS["Queue label contract"]
+        SCHEMA["Model JSON schema"]
+        TREE["Date based artifact tree"]
+        MANIFEST["wake_word_manifest.json"]
+        VALIDATOR["Validation scripts"]
+        TEMPLATES["Issue templates"]
+    end
+
+    ISSUES --> LABELS
+    TREE --> MANIFEST
+    SCHEMA --> VALIDATOR
+    TREE --> VALIDATOR
+    MANIFEST --> VALIDATOR
+    DOCS --> TEMPLATES

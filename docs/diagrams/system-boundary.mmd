@@ -1,0 +1,12 @@
+flowchart LR
+    THREADS["Threads request"] --> COLLECTOR["Private collector"]
+    GITHUB_USER["GitHub direct request"] --> ISSUE["Public prod issue"]
+    COLLECTOR --> ISSUE
+    MAINTAINER["Maintainer approval"] --> ISSUE
+    ISSUE --> TRAINER["Private trainer"]
+    TRAINER --> ARTIFACTS["Model artifacts"]
+    TRAINER --> RESULT["Metrics comment"]
+    ARTIFACTS --> MANIFEST["Public manifest"]
+    MANIFEST --> USERS["Model users"]
+    RESULT --> COLLECTOR
+    COLLECTOR --> THREADS

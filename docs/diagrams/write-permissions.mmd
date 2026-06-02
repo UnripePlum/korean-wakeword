@@ -1,0 +1,14 @@
+flowchart TD
+    COLLECTOR["Collector token"] --> CREATE["Create Threads issue"]
+    COLLECTOR --> TRUSTED_LABEL["Add trusted label"]
+    MAINTAINER["Maintainer"] --> GITHUB_LABEL["Approve GitHub issue"]
+    TRAINER["Trainer token"] --> CLAIM["Claim or close issue"]
+    TRAINER --> PUSH["Push model artifacts"]
+    TRAINER --> COMMENT["Write metrics result"]
+
+    CREATE --> ISSUE["Prod issue"]
+    TRUSTED_LABEL --> ISSUE
+    GITHUB_LABEL --> ISSUE
+    CLAIM --> ISSUE
+    PUSH --> ARTIFACTS["Artifact tree"]
+    COMMENT --> ISSUE
