@@ -1,47 +1,38 @@
 # Korean Wakeword
 
-Public prod repository for Korean micro wake word models.
+Korean Wakeword is a public catalog for Korean micro wake word models.
 
-This repository owns:
+If you want a new wake word model, create a GitHub Issue in this repository using the request format below. When the request is accepted and processed, the generated model files are published as a folder in this repo.
 
-- public README and user-facing docs;
-- public wakeword request issues;
-- published Korean wakeword model artifacts;
-- `wake_word_manifest.json`;
-- manifest generation/validation code;
-- open-source project code that is safe to publish.
+## Quick Start
 
-It does not own:
-
-- Threads tokens;
-- requester eligibility state;
-- self-hosted runner registration;
-- local training secrets;
-- private training issues.
-
-Related repositories:
-
-- `UnripePlum/korean-wakeword-request-collector`: private Threads request collector.
-- `UnripePlum/korean-wakeword-trainer`: private training runner and execution queue.
-
-## Request Flow
-
-Users can request a wakeword in either place:
-
-- Threads comment;
-- GitHub issue in this repository.
-
-Use this format:
+1. Open a new GitHub Issue.
+2. Write the request in this format:
 
 ```text
-요청: 자비스
+요청:자비스
 ```
 
-The normalized Korean wakeword must be at most 8 Hangul syllable characters.
+3. After the model is generated, a model folder is added:
 
-The private collector converts Threads requests into GitHub issues here. The private trainer watches approved issues here, generates the model, and commits finished artifacts back into this repository.
+```text
+jarvis/2026-06-02/jarvis.json
+jarvis/2026-06-02/jarvis.tflite
+```
 
-## Published Files
+4. The model also appears in:
+
+```text
+wake_word_manifest.json
+```
+
+## Request Rules
+
+- Use Korean.
+- Keep the wake word at 8 syllables or fewer.
+- Use the issue title or body format `요청:<wakeword>`.
+
+## Published File Layout
 
 ```text
 <artifact_slug>/<generation_start_date>/<artifact_slug>.json
@@ -49,30 +40,15 @@ The private collector converts Threads requests into GitHub issues here. The pri
 wake_word_manifest.json
 ```
 
-Example:
-
-```text
-jarvis/2026-06-02/jarvis.json
-jarvis/2026-06-02/jarvis.tflite
-```
-
-## Manifest Tooling
-
-Generate the public manifest after adding or changing artifact folders:
-
-```sh
-python scripts/manifest/generate.py --write
-```
-
-Validate tests and manifest freshness before publishing:
+## For Maintainers
 
 ```sh
 python -m unittest discover -s tests
 python scripts/manifest/generate.py --check
 ```
 
-## Design Docs
+More details:
 
 - [Architecture](docs/ARCHITECTURE.md)
-- [Artifact storage contract](docs/PUBLISHING.md)
-- [Security notes](docs/SECURITY.md)
+- [Publishing](docs/PUBLISHING.md)
+- [Security](docs/SECURITY.md)
