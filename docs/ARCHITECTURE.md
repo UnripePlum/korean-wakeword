@@ -6,52 +6,57 @@
 
 It does not poll Threads. The private request collector creates public-safe issues in this repository. The worker consumes those issues, trains wakeword models on the local Apple Silicon self-hosted runner, and stores finished artifacts in this same repository.
 
+There is no separate distribution repository. Artifact storage is a directory and manifest inside this worker repository.
+
 ## High-Level Flow
 
 ```mermaid
 flowchart TD
     A["Request collector"]
 
-    subgraph ISSUE["Worker issue queue"]
-        B1["Issue title: 요청: 자비스"]
-        B2["Issue body: generation JSON"]
-        B3["Label: ready-to-train"]
-    end
+    subgraph REPO["UnripePlum/korean-wakeword<br/>public worker repo"]
+        subgraph ISSUE["Issue queue"]
+            B1["Issue title: 요청: 자비스"]
+            B2["Issue body: generation JSON"]
+            B3["Label: ready-to-train"]
+        end
 
-    subgraph BRANCHES["Worker branches"]
-        C1["develop<br/>implementation and tests"]
-        C2["deploy<br/>active runner workflow"]
-    end
+        subgraph BRANCHES["Branches"]
+            C1["develop<br/>implementation and tests"]
+            C2["deploy<br/>default branch, active workflow"]
+        end
 
-    subgraph ACTIONS["GitHub Actions on deploy"]
-        D1["Event: issues.labeled"]
-        D2["Workflow from default branch"]
-        D3["Runner: self-hosted macOS ARM64"]
-    end
+        subgraph ACTIONS["GitHub Actions on deploy"]
+            D1["Event: issues.labeled"]
+            D2["Workflow from default branch"]
+            D3["Runner: self-hosted macOS ARM64"]
+        end
 
-    subgraph TRAIN["Wakeword generation"]
-        E1["Validate issue payload"]
-        E2["Acquire local training lock"]
-        E3["Invoke Korean trainer"]
-        E4["Extract metrics"]
-        E5["Apply quality gate"]
-    end
+        subgraph TRAIN["Wakeword generation"]
+            E1["Validate issue payload"]
+            E2["Acquire local training lock"]
+            E3["Invoke Korean trainer"]
+            E4["Extract metrics"]
+            E5["Apply quality gate"]
+        end
 
-    subgraph PUBLISH["Publish result"]
-        F1["Copy model JSON and TFLite"]
-        F2["Regenerate manifest"]
-        F3["Commit artifacts to this repository"]
-    end
+        subgraph ARTIFACTS["Artifact store in this repo"]
+            F1["microWakeWordsKorean/<slug>.json"]
+            F2["microWakeWordsKorean/<slug>.tflite"]
+            F3["wake_word_manifest.json"]
+        end
 
-    G["Worker issue result comment"]
-    H["Published model files"]
+        G["Worker issue result comment"]
+    end
 
     A --> B1 --> B2 --> B3
     C1 -->|"release merge"| C2
     B3 --> D1 --> D2 --> D3
     C2 --> D2
     D3 --> E1 --> E2 --> E3 --> E4 --> E5
-    E5 --> F1 --> F2 --> F3 --> H
+    E5 --> F1
+    E5 --> F2
+    E5 --> F3
     E5 --> G
     F3 --> G
 ```
@@ -66,7 +71,7 @@ The worker owns:
 - training wrapper;
 - metrics extraction;
 - quality gate;
-- artifact publication into this repository;
+- artifact storage inside this repository;
 - worker issue comments and labels.
 
 The worker does not own:
@@ -152,9 +157,9 @@ The worker must:
 - extract metrics;
 - publish only after the metrics gate passes.
 
-## Publishing
+## Artifact Storage
 
-Successful worker jobs publish into this repository:
+Successful worker jobs store artifacts in this repository:
 
 ```text
 UnripePlum/korean-wakeword

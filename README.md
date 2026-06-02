@@ -1,6 +1,6 @@
-# Korean Wakeword Worker
+# Korean Wakeword
 
-Private worker repository for the Korean wakeword generator.
+Public worker and artifact repository for the Korean wakeword generator.
 
 This repository owns:
 
@@ -8,7 +8,7 @@ This repository owns:
 - local Apple Silicon self-hosted runner workflow;
 - Korean wakeword training wrapper;
 - metrics extraction;
-- publishing finished artifacts to `UnripePlum/korean-wakeword`;
+- storing finished wakeword artifacts;
 - worker issue status updates.
 
 The request collector repository creates issues here:
@@ -31,6 +31,6 @@ The worker keeps GitHub issue-triggered workflows on `deploy`. `deploy` is the d
 - [Architecture](docs/ARCHITECTURE.md)
 - [Issue contract](docs/ISSUE_CONTRACT.md)
 - [Runner workflow](docs/RUNNER_WORKFLOW.md)
-- [Publishing contract](docs/PUBLISHING.md)
+- [Artifact storage contract](docs/PUBLISHING.md)
 - [Branching](docs/BRANCHING.md)
 - [Security notes](docs/SECURITY.md)

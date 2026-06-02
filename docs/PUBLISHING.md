@@ -1,6 +1,6 @@
-# Publishing Contract
+# Artifact Storage Contract
 
-The public worker repository publishes finished artifacts into this same repository.
+The public worker stores finished artifacts in this same repository.
 
 Public repository:
 
@@ -8,7 +8,7 @@ Public repository:
 UnripePlum/korean-wakeword
 ```
 
-## Published Files
+## Stored Files
 
 Each successful job writes:
 
@@ -69,7 +69,7 @@ The repository manifest should expose the raw GitHub URL for each model JSON.
 
 ## Conflict Handling
 
-If pushing to the public repository fails because `main` moved:
+If pushing to the repository fails because `deploy` moved:
 
 1. fetch and rebase once;
 2. regenerate manifest;
