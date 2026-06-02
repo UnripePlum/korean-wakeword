@@ -4,16 +4,21 @@
 
 `UnripePlum/korean-wakeword` is the public prod repository.
 
-It stores finished Korean wakeword artifacts, the public manifest, and user-facing documentation. It does not run local training and does not own the self-hosted runner.
+It stores public wakeword request issues, finished Korean wakeword artifacts, the public manifest, and user-facing documentation. It does not run local training and does not own the self-hosted runner.
 
 ## System Architecture
 
 ```mermaid
 flowchart LR
-    A["Threads<br/>요청: 자비스"] --> B["korean-wakeword-request-collector<br/>private"]
-    B --> C["korean-wakeword-trainer<br/>private"]
-    C --> D["korean-wakeword<br/>public prod"]
-    D --> E["Users / ESPHome / Home Assistant"]
+    A["Threads<br/>요청: 자비스"] --> B["request collector<br/>private"]
+    X["GitHub user"] --> C["prod issue<br/>요청: 자비스"]
+    B --> C
+    C --> D["trainer<br/>private self-hosted runner"]
+    D --> E["wakeword-ko artifacts<br/>manifest"]
+    E --> C
+    C --> B
+    B --> A
+    E --> F["Users / ESPHome / Home Assistant"]
 ```
 
 ## Prod Repository Internals
@@ -22,15 +27,16 @@ flowchart LR
 flowchart TD
     subgraph PROD["UnripePlum/korean-wakeword<br/>public"]
         A["README and docs"]
-        B["wakeword-ko/<slug>.json"]
-        C["wakeword-ko/<slug>.tflite"]
-        D["wake_word_manifest.json"]
-        E["manifest generator / validation"]
+        B["Issues<br/>요청: <wakeword>"]
+        C["wakeword-ko/<slug>.json"]
+        D["wakeword-ko/<slug>.tflite"]
+        E["wake_word_manifest.json"]
+        F["manifest generator / validation"]
     end
 
-    B --> D
-    C --> B
-    E --> D
+    C --> E
+    D --> C
+    F --> E
 ```
 
 ## Responsibilities
@@ -38,6 +44,7 @@ flowchart TD
 Prod owns:
 
 - public project docs;
+- public wakeword request issues;
 - published `.json` wakeword descriptors;
 - published `.tflite` wakeword models;
 - public manifest;
@@ -73,3 +80,24 @@ wake_word_manifest.json
 Artifacts are written by `UnripePlum/korean-wakeword-trainer`.
 
 The trainer may push directly for MVP. Later, it can open pull requests for manual artifact review.
+
+## Request Issue Contract
+
+GitHub users can open issues directly in this repository.
+
+Issue title:
+
+```text
+요청: 자비스
+```
+
+Issue labels:
+
+- `queued`
+- `ready-to-train`
+- `training`
+- `published`
+- `failed`
+- `rejected`
+
+The private trainer only executes when a trusted actor adds `ready-to-train`.

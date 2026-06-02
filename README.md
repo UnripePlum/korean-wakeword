@@ -5,6 +5,7 @@ Public prod repository for Korean micro wake word models.
 This repository owns:
 
 - public README and user-facing docs;
+- public wakeword request issues;
 - published Korean wakeword model artifacts;
 - `wake_word_manifest.json`;
 - manifest generation/validation code;
@@ -25,13 +26,18 @@ Related repositories:
 
 ## Request Flow
 
-Users request a wakeword on Threads:
+Users can request a wakeword in either place:
+
+- Threads comment;
+- GitHub issue in this repository.
+
+Use this format:
 
 ```text
 요청: 자비스
 ```
 
-The private collector receives the request, the private trainer generates the model, and finished artifacts are committed here.
+The private collector converts Threads requests into GitHub issues here. The private trainer watches approved issues here, generates the model, and commits finished artifacts back into this repository.
 
 ## Published Files
 

@@ -18,12 +18,13 @@ UnripePlum/korean-wakeword-trainer
 
 Public issues here are for:
 
+- wakeword generation requests;
 - published model bugs;
 - compatibility reports;
 - documentation corrections;
 - artifact removal or rename requests.
 
-Opening a public issue here must not start training.
+Opening a public issue here must not start training by itself. Training starts only when the private trainer sees a trusted `ready-to-train` label.
 
 ## Secret Boundary
 

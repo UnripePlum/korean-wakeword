@@ -45,7 +45,7 @@ Do not publish:
 - Threads tokens;
 - GitHub tokens;
 - private collector payloads;
-- trainer issue internals beyond a public-safe reference;
+- private trainer internals beyond a public-safe reference;
 - raw user audio unless explicitly intended and licensed;
 - local filesystem paths;
 - copied external source material.
