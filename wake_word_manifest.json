@@ -1,5 +1,83 @@
 {
-  "model_count": 0,
-  "models": [],
+  "model_count": 1,
+  "models": [
+    {
+      "artifact": {
+        "generation_start_date": "2026-06-08",
+        "generation_started_at": "2026-06-08T12:26:29.572813Z",
+        "generation_version": "2026-06-08T12-26-29Z",
+        "json_path": "kw-71c297f2837f/2026-06-08T12-26-29Z/kw-71c297f2837f.json",
+        "model_path": "kw-71c297f2837f/2026-06-08T12-26-29Z/kw-71c297f2837f.tflite"
+      },
+      "artifact_contract": {
+        "feature_extractor": {
+          "feature_bins": 40,
+          "feature_step_size_ms": 10,
+          "frame_hop_samples": 512,
+          "sample_rate": 16000
+        },
+        "frontend": "esp_micro_speech_features",
+        "input_tensor": {
+          "dtype": "int8",
+          "shape": [
+            1,
+            3,
+            40
+          ]
+        },
+        "micro_wake_word_compatible": true,
+        "name": "micro_wake_word_v1",
+        "output_tensor": {
+          "dtype": "uint8",
+          "scale": 0.00390625,
+          "shape": [
+            1,
+            1
+          ],
+          "zero_point": 0
+        },
+        "runtime": "esphome_micro_wake_word"
+      },
+      "data_generation": {
+        "positive_sample_count": 160,
+        "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "tts_provider": "qwen",
+        "voice_variant_count": 4
+      },
+      "metrics": {
+        "false_accepts_per_hour": 7.792883,
+        "hard_negative_bank_sample_count": 160,
+        "hard_negative_sample_count": 160,
+        "raw_negative_detections": 1,
+        "raw_negative_total": 240,
+        "raw_positive_detection_rate": 0.94,
+        "recall": 0.94
+      },
+      "request": {
+        "prod_issue": 5,
+        "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/5",
+        "source": "github"
+      },
+      "runtime": {
+        "feature_step_size": 10,
+        "minimum_esphome_version": "2024.7",
+        "probability_cutoff": 1.0,
+        "sliding_window_size": 5,
+        "tensor_arena_size": 50000
+      },
+      "schema_version": 1,
+      "trainer": {
+        "source": "UnripePlum/korean-wakeword-trainer",
+        "trainer_version": "0.1.0",
+        "training_duration_minutes": 45.99,
+        "training_duration_seconds": 2759.138
+      },
+      "wakeword": {
+        "display": "자비스",
+        "language": "ko",
+        "slug": "kw-71c297f2837f"
+      }
+    }
+  ],
   "schema_version": 1
 }
