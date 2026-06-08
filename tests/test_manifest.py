@@ -11,8 +11,14 @@ from scripts.manifest.core import (
 )
 
 
-def valid_model_metadata(slug="jarvis", display="자비스", date="2026-06-02"):
-    return {
+def valid_model_metadata(
+    slug="jarvis",
+    display="자비스",
+    date="2026-06-02",
+    version=None,
+):
+    artifact_segment = version or date
+    metadata = {
         "schema_version": 1,
         "wakeword": {
             "display": display,
@@ -21,8 +27,8 @@ def valid_model_metadata(slug="jarvis", display="자비스", date="2026-06-02"):
         },
         "artifact": {
             "generation_start_date": date,
-            "model_path": f"{slug}/{date}/{slug}.tflite",
-            "json_path": f"{slug}/{date}/{slug}.json",
+            "model_path": f"{slug}/{artifact_segment}/{slug}.tflite",
+            "json_path": f"{slug}/{artifact_segment}/{slug}.json",
         },
         "trainer": {
             "trainer_version": "0.1.0",
@@ -50,15 +56,29 @@ def valid_model_metadata(slug="jarvis", display="자비스", date="2026-06-02"):
             "source": "threads",
         },
     }
+    if version is not None:
+        metadata["artifact"]["generation_version"] = version
+        metadata["artifact"]["generation_started_at"] = (
+            f"{version[:10]}T{version[11:13]}:{version[14:16]}:{version[17:19]}Z"
+        )
+    return metadata
 
 
-def write_artifact(root, slug="jarvis", display="자비스", date="2026-06-02", metadata=None):
-    artifact_dir = Path(root) / slug / date
+def write_artifact(
+    root,
+    slug="jarvis",
+    display="자비스",
+    date="2026-06-02",
+    version=None,
+    metadata=None,
+):
+    artifact_segment = version or date
+    artifact_dir = Path(root) / slug / artifact_segment
     artifact_dir.mkdir(parents=True)
     data = (
         metadata
         if metadata is not None
-        else valid_model_metadata(slug=slug, display=display, date=date)
+        else valid_model_metadata(slug=slug, display=display, date=date, version=version)
     )
     (artifact_dir / f"{slug}.json").write_text(
         json.dumps(data, ensure_ascii=False), encoding="utf-8"
@@ -83,6 +103,21 @@ class ManifestTests(unittest.TestCase):
             self.assertEqual(
                 manifest["models"][0]["artifact"]["model_path"],
                 "jarvis/2026-06-02/jarvis.tflite",
+            )
+
+    def test_builds_manifest_from_timestamped_artifact_version(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            write_artifact(tmp, version="2026-06-02T08-33-12Z")
+
+            manifest = build_manifest(Path(tmp))
+
+            artifact = manifest["models"][0]["artifact"]
+            self.assertEqual(artifact["generation_start_date"], "2026-06-02")
+            self.assertEqual(artifact["generation_started_at"], "2026-06-02T08:33:12Z")
+            self.assertEqual(artifact["generation_version"], "2026-06-02T08-33-12Z")
+            self.assertEqual(
+                artifact["model_path"],
+                "jarvis/2026-06-02T08-33-12Z/jarvis.tflite",
             )
 
     def test_write_manifest_outputs_canonical_json(self):
@@ -144,7 +179,7 @@ class ManifestTests(unittest.TestCase):
             )
             (artifact_dir / "jarvis.tflite").write_bytes(b"model")
 
-            with self.assertRaisesRegex(ManifestError, "generation_start_date"):
+            with self.assertRaisesRegex(ManifestError, "generation_version"):
                 build_manifest(Path(tmp))
 
     def test_rejects_invalid_generation_date_when_directory_contains_any_json(self):
@@ -155,7 +190,19 @@ class ManifestTests(unittest.TestCase):
                 json.dumps({"schema_version": 1}), encoding="utf-8"
             )
 
-            with self.assertRaisesRegex(ManifestError, "generation_start_date"):
+            with self.assertRaisesRegex(ManifestError, "generation_version"):
+                build_manifest(Path(tmp))
+
+    def test_rejects_timestamped_artifact_missing_generation_version(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            metadata = valid_model_metadata()
+            write_artifact(
+                tmp,
+                version="2026-06-02T08-33-12Z",
+                metadata=metadata,
+            )
+
+            with self.assertRaisesRegex(ManifestError, "generation_version"):
                 build_manifest(Path(tmp))
 
     def test_check_manifest_requires_canonical_rendering(self):

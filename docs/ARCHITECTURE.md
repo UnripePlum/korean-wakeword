@@ -61,26 +61,26 @@ Request validation:
 - `published`: artifacts were committed and manifest was updated.
 - `failed`: training or quality gate failed.
 - `rejected`: request is invalid or not allowed.
-- `retryable`: request can be retried by a trusted actor.
 
 ### Artifact Paths
 
 ```text
-<artifact_slug>/<generation_start_date>/<artifact_slug>.json
-<artifact_slug>/<generation_start_date>/<artifact_slug>.tflite
+<artifact_slug>/<generation_version>/<artifact_slug>.json
+<artifact_slug>/<generation_version>/<artifact_slug>.tflite
 wake_word_manifest.json
 ```
 
 Example:
 
 ```text
-jarvis/2026-06-02/jarvis.json
-jarvis/2026-06-02/jarvis.tflite
+jarvis/2026-06-08T03-42-20Z/jarvis.json
+jarvis/2026-06-08T03-42-20Z/jarvis.tflite
 ```
 
 `artifact_slug` is the English-safe wakeword folder name derived from the Korean phrase, for example `jarvis` or `nukjuk`. It must be lowercase ASCII and safe as a Git path segment.
 
-`generation_start_date` is the date when trainer generation starts, formatted as `YYYY-MM-DD`.
+`generation_version` is the UTC timestamp when trainer generation starts, formatted as `YYYY-MM-DDTHH-MM-SSZ`.
+Legacy date-only artifact folders remain readable, but new artifacts should use timestamped versions.
 
 ### Model JSON
 
@@ -98,8 +98,10 @@ Recommended shape:
   },
   "artifact": {
     "generation_start_date": "2026-06-02",
-    "model_path": "jarvis/2026-06-02/jarvis.tflite",
-    "json_path": "jarvis/2026-06-02/jarvis.json"
+    "generation_started_at": "2026-06-02T08:33:12Z",
+    "generation_version": "2026-06-02T08-33-12Z",
+    "model_path": "jarvis/2026-06-02T08-33-12Z/jarvis.tflite",
+    "json_path": "jarvis/2026-06-02T08-33-12Z/jarvis.json"
   },
   "trainer": {
     "trainer_version": "0.1.0",

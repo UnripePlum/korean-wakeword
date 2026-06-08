@@ -43,8 +43,8 @@ Korean Wakeword is a public catalog for Korean micro wake word requests and publ
 When a request is processed, the generated model appears as a folder:
 
 ```text
-jarvis/2026-06-02/jarvis.json
-jarvis/2026-06-02/jarvis.tflite
+jarvis/2026-06-08T03-42-20Z/jarvis.json
+jarvis/2026-06-08T03-42-20Z/jarvis.tflite
 ```
 
 The model is also indexed in:
@@ -62,10 +62,13 @@ wake_word_manifest.json
 ## Published Layout
 
 ```text
-<artifact_slug>/<generation_start_date>/<artifact_slug>.json
-<artifact_slug>/<generation_start_date>/<artifact_slug>.tflite
+<artifact_slug>/<generation_version>/<artifact_slug>.json
+<artifact_slug>/<generation_version>/<artifact_slug>.tflite
 wake_word_manifest.json
 ```
+
+`generation_version` is the UTC generation start timestamp, formatted as
+`YYYY-MM-DDTHH-MM-SSZ`.
 
 ## Use the Manifest
 

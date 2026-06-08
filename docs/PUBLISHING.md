@@ -15,9 +15,14 @@ UnripePlum/korean-wakeword-trainer
 Each successful job writes:
 
 ```text
-<artifact_slug>/<generation_start_date>/<artifact_slug>.json
-<artifact_slug>/<generation_start_date>/<artifact_slug>.tflite
+<artifact_slug>/<generation_version>/<artifact_slug>.json
+<artifact_slug>/<generation_version>/<artifact_slug>.tflite
 ```
+
+`generation_version` is the UTC generation start timestamp formatted as
+`YYYY-MM-DDTHH-MM-SSZ`, for example `2026-06-08T03-42-20Z`. The model JSON also
+keeps `artifact.generation_start_date` as `YYYY-MM-DD` and
+`artifact.generation_started_at` as ISO UTC text.
 
 Then it regenerates:
 
@@ -55,7 +60,7 @@ Each model JSON should include:
 
 - Korean display wakeword;
 - matching `.tflite` path;
-- generation start date;
+- generation start date and timestamp version;
 - trainer version;
 - trained language `ko`;
 - public-safe Qwen TTS generation metadata;
