@@ -19,7 +19,6 @@ RESERVED_ROOT_DIRECTORIES = {
     "docs",
     "scripts",
     "tests",
-    "wakeword",
 }
 
 ARTIFACT_SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
