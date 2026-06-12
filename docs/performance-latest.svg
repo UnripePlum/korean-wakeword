@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="220" viewBox="0 0 640 220" role="img" aria-labelledby="title desc">
+  <title id="title">Korean Wakeword - Latest Snapshot</title>
+  <desc id="desc">Performance snapshot with recall and false accepts per hour.</desc>
+  <rect width="640" height="220" fill="#ffffff"/>
+
+  <g font-family="Verdana, Arial, sans-serif" fill="#0f172a">
+    <text x="28" y="28" font-size="18" font-weight="700">Korean Wakeword - Latest Snapshot</text>
+    <text x="28" y="52" font-size="11" fill="#334155">Model: gaebalmodeu</text>
+
+    <text x="320" y="78" text-anchor="middle" font-size="12" font-weight="700">Recall (higher is better)</text>
+
+    <text x="24" y="126" font-size="11" fill="#334155">0.0</text>
+    <text x="24" y="98" font-size="11" fill="#334155">1.0</text>
+    <line x1="120" y1="100" x2="560" y2="100" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="120" y="82" width="418" height="20" fill="#dbeafe"/>
+    <!-- recall = 0.9524 -> x = 120 + 440 * 0.9524 = 538.06 -->
+    <rect x="120" y="82" width="418" height="20" fill="#2563eb"/>
+    <text x="418" y="96" text-anchor="middle" font-size="11" fill="#e0f2fe" font-weight="700">0.9524</text>
+
+    <text x="320" y="162" text-anchor="middle" font-size="12" font-weight="700">False accepts/hour (lower is better)</text>
+
+    <text x="24" y="204" font-size="11" fill="#334155">0</text>
+    <text x="24" y="192" font-size="11" fill="#334155">10</text>
+    <text x="24" y="180" font-size="11" fill="#334155">20</text>
+    <text x="24" y="168" font-size="11" fill="#334155">30</text>
+    <line x1="120" y1="200" x2="560" y2="200" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="120" y1="160" x2="120" y2="200" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="560" y1="160" x2="560" y2="200" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- false_accepts_per_hour = 15.79, map 0..30 across 120..560 => 320 + 440*0.5263 = 351 -->
+    <rect x="120" y="184" width="231" height="16" fill="#f59e0b"/>
+    <text x="350" y="196" text-anchor="middle" font-size="10" fill="#111827">15.79</text>
+    <text x="120" y="222" font-size="10" fill="#64748b">Low = better</text>
+
+    <text x="28" y="218" font-size="10" fill="#64748b">Source: wake_word_manifest.json (latest snapshot)</text>
+  </g>
+</svg>
