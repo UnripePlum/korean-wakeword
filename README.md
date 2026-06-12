@@ -164,3 +164,13 @@ python scripts/manifest/generate.py --check
 ```
 
 </details>
+
+## Performance
+
+<!-- KWW:PERFORMANCE_TABLE_START -->
+| Wakeword | Slug | Generation | Recall | False accepts/hour | Cutoff | Training |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| 변신 | `byeonsin` | `2026-06-08T16-10-37Z` | 86.5% | 15.42 | 1 | 42.68 min |
+| 개발모드 | `gaebalmodeu` | `2026-06-08T14-00-23Z` | 95.2% | 15.793 | 1 | 41.37 min |
+| 게임모드 | `geimmodeu` | `2026-06-12T12-11-32Z` | 92.3% | 15.995 | 1 | 71.98 min |
+<!-- KWW:PERFORMANCE_TABLE_END -->

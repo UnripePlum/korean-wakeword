@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "wakeword": {
+    "display": "게임모드",
+    "slug": "geimmodeu",
+    "language": "ko"
+  },
+  "artifact": {
+    "generation_start_date": "2026-06-12",
+    "generation_started_at": "2026-06-12T12:11:32.989334Z",
+    "generation_version": "2026-06-12T12-11-32Z",
+    "model_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.tflite",
+    "json_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.json"
+  },
+  "trainer": {
+    "trainer_version": "0.1.0",
+    "source": "UnripePlum/korean-wakeword-trainer",
+    "training_duration_seconds": 4319.025,
+    "training_duration_minutes": 71.98
+  },
+  "data_generation": {
+    "tts_provider": "qwen",
+    "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "positive_sample_count": 160,
+    "voice_variant_count": 4
+  },
+  "metrics": {
+    "recall": 0.923077,
+    "false_accepts_per_hour": 15.995024,
+    "raw_positive_detection_rate": 0.923077,
+    "raw_negative_detections": 2,
+    "raw_negative_total": 240,
+    "hard_negative_sample_count": 208,
+    "hard_negative_bank_sample_count": 208
+  },
+  "runtime": {
+    "probability_cutoff": 1.0,
+    "sliding_window_size": 5,
+    "feature_step_size": 10,
+    "tensor_arena_size": 50000,
+    "minimum_esphome_version": "2024.7"
+  },
+  "request": {
+    "prod_issue": 13,
+    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/13",
+    "source": "github"
+  },
+  "artifact_contract": {
+    "name": "micro_wake_word_v1",
+    "runtime": "esphome_micro_wake_word",
+    "micro_wake_word_compatible": true,
+    "frontend": "esp_micro_speech_features",
+    "input_tensor": {
+      "dtype": "int8",
+      "shape": [
+        1,
+        3,
+        40
+      ]
+    },
+    "output_tensor": {
+      "dtype": "uint8",
+      "shape": [
+        1,
+        1
+      ],
+      "scale": 0.00390625,
+      "zero_point": 0
+    },
+    "feature_extractor": {
+      "sample_rate": 16000,
+      "frame_hop_samples": 512,
+      "feature_step_size_ms": 10,
+      "feature_bins": 40
+    }
+  }
+}
