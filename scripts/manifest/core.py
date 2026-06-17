@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import json
 import re
 from datetime import date, datetime, timezone
@@ -11,6 +12,7 @@ from typing import Any
 MANIFEST_NAME = "wake_word_manifest.json"
 MANIFEST_SCHEMA_VERSION = 1
 MODEL_SCHEMA_VERSION = 1
+PUBLIC_BASE_URL = "https://raw.githubusercontent.com/UnripePlum/korean-wakeword/main"
 
 RESERVED_ROOT_DIRECTORIES = {
     ".git",
@@ -63,7 +65,7 @@ def build_manifest(repo_root: Path | str) -> dict[str, Any]:
             expected_json_path=artifact["json_rel"],
             expected_model_path=artifact["model_rel"],
         )
-        models.append(copy.deepcopy(metadata))
+        models.append(_build_manifest_model(metadata, artifact))
 
     models.sort(
         key=lambda model: (
@@ -76,10 +78,38 @@ def build_manifest(repo_root: Path | str) -> dict[str, Any]:
     )
 
     return {
+        "base_url": PUBLIC_BASE_URL,
         "schema_version": MANIFEST_SCHEMA_VERSION,
         "model_count": len(models),
         "models": models,
     }
+
+
+def _build_manifest_model(
+    metadata: dict[str, Any],
+    artifact: dict[str, Any],
+) -> dict[str, Any]:
+    model = copy.deepcopy(metadata)
+    display = model["wakeword"]["display"]
+    slug = model["wakeword"]["slug"]
+    version = (
+        model["artifact"].get("generation_version")
+        or model["artifact"]["generation_start_date"]
+    )
+
+    model.update(
+        {
+            "description": f"{display} wakeword model",
+            "id": slug,
+            "metadata_path": artifact["json_rel"],
+            "metadata_sha256": _sha256_file(artifact["json_file"]),
+            "model_path": artifact["model_rel"],
+            "model_sha256": _sha256_file(artifact["model_file"]),
+            "name": display,
+            "version": version,
+        }
+    )
+    return model
 
 
 def write_manifest(repo_root: Path | str) -> Path:
@@ -146,6 +176,7 @@ def _discover_artifacts(root: Path) -> list[dict[str, Any]]:
                     "date": generation_start_date,
                     "version": version_dir.name,
                     "json_file": json_file,
+                    "model_file": model_file,
                     "json_rel": json_rel,
                     "model_rel": model_rel,
                 }
@@ -389,6 +420,14 @@ def _load_json(path: Path) -> Any:
             return json.load(file)
     except json.JSONDecodeError as exc:
         raise ManifestError(f"invalid JSON: {_safe_path(path)}: {exc}") from exc
+
+
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as file:
+        for chunk in iter(lambda: file.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _require_string(data: dict[str, Any], path: str) -> str:

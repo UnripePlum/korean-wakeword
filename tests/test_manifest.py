@@ -1,3 +1,4 @@
+import hashlib
 import json
 import tempfile
 import unittest
@@ -95,6 +96,10 @@ class ManifestTests(unittest.TestCase):
             manifest = build_manifest(Path(tmp))
 
             self.assertEqual(manifest["schema_version"], 1)
+            self.assertEqual(
+                manifest["base_url"],
+                "https://raw.githubusercontent.com/UnripePlum/korean-wakeword/main",
+            )
             self.assertEqual(manifest["model_count"], 2)
             self.assertEqual(
                 [model["wakeword"]["slug"] for model in manifest["models"]],
@@ -103,6 +108,31 @@ class ManifestTests(unittest.TestCase):
             self.assertEqual(
                 manifest["models"][0]["artifact"]["model_path"],
                 "jarvis/2026-06-02/jarvis.tflite",
+            )
+            self.assertEqual(manifest["models"][0]["id"], "jarvis")
+            self.assertEqual(manifest["models"][0]["name"], "자비스")
+            self.assertEqual(manifest["models"][0]["version"], "2026-06-02")
+            self.assertEqual(
+                manifest["models"][0]["description"],
+                "자비스 wakeword model",
+            )
+            self.assertEqual(
+                manifest["models"][0]["metadata_path"],
+                "jarvis/2026-06-02/jarvis.json",
+            )
+            self.assertEqual(
+                manifest["models"][0]["metadata_sha256"],
+                hashlib.sha256(
+                    (Path(tmp) / "jarvis/2026-06-02/jarvis.json").read_bytes()
+                ).hexdigest(),
+            )
+            self.assertEqual(
+                manifest["models"][0]["model_path"],
+                "jarvis/2026-06-02/jarvis.tflite",
+            )
+            self.assertEqual(
+                manifest["models"][0]["model_sha256"],
+                hashlib.sha256(b"model").hexdigest(),
             )
 
     def test_builds_manifest_from_timestamped_artifact_version(self):
@@ -118,6 +148,10 @@ class ManifestTests(unittest.TestCase):
             self.assertEqual(
                 artifact["model_path"],
                 "jarvis/2026-06-02T08-33-12Z/jarvis.tflite",
+            )
+            self.assertEqual(
+                manifest["models"][0]["version"],
+                "2026-06-02T08-33-12Z",
             )
 
     def test_write_manifest_outputs_canonical_json(self):
