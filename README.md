@@ -89,59 +89,27 @@ Evaluation quality can vary by device, microphone, background noise, and runtime
 
 ## Performance
 
-This repository exposes public performance metrics for each published wake word using the fields below.
+This section is regenerated from `wake_word_manifest.json` when models are published.
 
-### Public metric definitions
+![Latest performance snapshot](docs/performance-latest.svg)
+
+<!-- KWW:PERFORMANCE_TABLE_START -->
+| Wakeword | Slug | Generation | Recall | False accept rate | False accepts/hour | Cutoff | Training |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| 변신 | `byeonsin` | `2026-06-08T16-10-37Z` | 86.5% | - | 15.42 | 1 | 42.68 min |
+| 개발모드 | `gaebalmodeu` | `2026-06-18T05-32-30Z` | 100.0% | 0.00% | 0 | 1 | 4.72 min |
+| 게임모드 | `geimmodeu` | `2026-06-18T04-55-23Z` | 95.0% | 0.00% | 0 | 0.99 | 4.57 min |
+<!-- KWW:PERFORMANCE_TABLE_END -->
+
+### Metric Definitions
 
 | Field | Meaning | Higher is better |
 | --- | --- | --- |
-| `recall` | Detection rate for target wake words. Ratio of correctly detected positive samples | yes |
-| `false_accepts_per_hour` | Estimated false acceptance rate per hour (FAR) | no |
-| `raw_positive_detection_rate` | Raw positive detection rate before internal adjustment | yes |
-| `raw_negative_total` | Total number of negative audio samples used | - |
-| `raw_negative_detections` | Number of false detections on negative samples | no |
-| `hard_negative_sample_count` | Number of hard-negative samples (difficult negative examples) | - |
-| `probability_cutoff` | Runtime detection threshold | tune by environment |
-| `training_duration_minutes` | Training duration in minutes | - |
-
-### Public performance snapshot
-
-The table below uses `wakeword.display` values from the manifest (human-readable names).
-
-Sample table from `wake_word_manifest.json` metadata (latest snapshot):
-
-| wakeword (display) | generation_version | recall | false_accepts_per_hour | probability_cutoff | training_duration_minutes |
-| --- | --- | ---: | ---: | ---: | ---: |
-| 개발모드 | 2026-06-08T14-00-23Z | 0.9524 | 15.79 | 1.00 | 41.37 |
-
-### Performance graph
-
-![Latest performance snapshot](docs/performance-latest.svg)
-```text
-recall (higher is better):        ████████████████████████████████████████ 0.9524
-false_accepts/hour (lower better):███████████████████████                 15.79
-```
-
-This chart shows the same values in one view using original metrics from the manifest:
-
-- Recall (blue): higher is better.
-- False accepts/hour (teal): lower is better.
-
-### How to read and compare
-
-- Compare only within the same dataset, runtime configuration, and detection threshold.
-- Always inspect `artifact.generation_version`, `runtime.*`, and `data_generation.*` together when comparing numbers.
-- A clear changelog-style format is `old -> new` per wake word (for example, recall and `false_accepts_per_hour`).
-- `probability_cutoff` may need adjustment based on environmental noise, mic quality, and sliding window settings.
-
-### Reproducibility checklist
-
-To reproduce results:
-
-- Keep the generated `generation_version` and metadata fields (`artifact`, `runtime`, `artifact_contract`) fixed.
-- Use the same audio corpus and the same hard-negative sample set.
-- Use the same evaluation script and `probability_cutoff`.
-- Update `wake_word_manifest.json` before release.
+| `recall` | Detection rate for target wake words. | yes |
+| `false_accept_rate` | False accepts divided by evaluated negatives. | no |
+| `false_accepts_per_hour` | Estimated false acceptance rate per hour. | no |
+| `probability_cutoff` | Runtime detection threshold. | tune by environment |
+| `training_duration_minutes` | Training duration in minutes. | - |
 
 ## Docs
 
@@ -164,13 +132,3 @@ python scripts/manifest/generate.py --check
 ```
 
 </details>
-
-## Performance
-
-<!-- KWW:PERFORMANCE_TABLE_START -->
-| Wakeword | Slug | Generation | Recall | False accepts/hour | Cutoff | Training |
-| --- | --- | --- | ---: | ---: | ---: | ---: |
-| 변신 | `byeonsin` | `2026-06-08T16-10-37Z` | 86.5% | 15.42 | 1 | 42.68 min |
-| 개발모드 | `gaebalmodeu` | `2026-06-08T14-00-23Z` | 95.2% | 15.793 | 1 | 41.37 min |
-| 게임모드 | `geimmodeu` | `2026-06-12T12-11-32Z` | 92.3% | 15.995 | 1 | 71.98 min |
-<!-- KWW:PERFORMANCE_TABLE_END -->

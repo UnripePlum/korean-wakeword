@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "wakeword": {
+    "display": "게임모드",
+    "slug": "geimmodeu",
+    "language": "ko"
+  },
+  "artifact": {
+    "generation_start_date": "2026-06-18",
+    "generation_started_at": "2026-06-18T04:55:23.401823Z",
+    "generation_version": "2026-06-18T04-55-23Z",
+    "model_path": "geimmodeu/2026-06-18T04-55-23Z/geimmodeu.tflite",
+    "json_path": "geimmodeu/2026-06-18T04-55-23Z/geimmodeu.json",
+    "model_sha256": "9841717db73d4219e885c66c3779d3b9683785b1e6f1024eb4ec890799ef2c80"
+  },
+  "trainer": {
+    "trainer_version": "0.1.0",
+    "source": "UnripePlum/korean-wakeword-trainer",
+    "training_duration_seconds": 274.083,
+    "training_duration_minutes": 4.57
+  },
+  "data_generation": {
+    "tts_provider": "qwen",
+    "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "positive_sample_count": 330,
+    "voice_variant_count": 4
+  },
+  "metrics": {
+    "recall": 0.95,
+    "false_accepts_per_hour": 0.0,
+    "false_accept_rate": 0.0,
+    "raw_positive_detection_rate": 0.95,
+    "raw_positive_detected": 19,
+    "raw_positive_total": 20,
+    "raw_negative_detections": 0,
+    "raw_negative_total": 232,
+    "hard_negative_sample_count": 232,
+    "hard_negative_bank_sample_count": 232
+  },
+  "runtime": {
+    "probability_cutoff": 0.99,
+    "sliding_window_size": 7,
+    "max_detection_rms": 0.3,
+    "min_detection_crest_factor": 2.0,
+    "feature_step_size": 10,
+    "tensor_arena_size": 50000,
+    "minimum_esphome_version": "2024.7"
+  },
+  "request": {
+    "prod_issue": 13,
+    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/13",
+    "source": "github"
+  },
+  "artifact_contract": {
+    "name": "micro_wake_word_v1",
+    "runtime": "esphome_micro_wake_word",
+    "micro_wake_word_compatible": true,
+    "frontend": "esp_micro_speech_features",
+    "input_tensor": {
+      "dtype": "int8",
+      "shape": [
+        1,
+        3,
+        40
+      ]
+    },
+    "output_tensor": {
+      "dtype": "uint8",
+      "shape": [
+        1,
+        1
+      ],
+      "scale": 0.00390625,
+      "zero_point": 0
+    },
+    "feature_extractor": {
+      "sample_rate": 16000,
+      "frame_hop_samples": 512,
+      "feature_step_size_ms": 10,
+      "feature_bins": 40
+    }
+  }
+}
