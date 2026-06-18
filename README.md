@@ -97,7 +97,7 @@ This section is regenerated from `wake_word_manifest.json` when models are publi
 | Wakeword | Slug | Generation | Recall | False accept rate | False accepts/hour | Cutoff | Training |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | 바둑이 | `baduki` | `2026-06-17T21-08-48Z` | 95.0% | 0.00% | 0 | 1 | 4.21 min |
-| 변신 | `byeonsin` | `2026-06-08T16-10-37Z` | 86.5% | - | 15.42 | 1 | 42.68 min |
+| 변신 | `byeonsin` | `2026-06-18T08-45-39Z` | 95.0% | 0.00% | 0 | 1 | 3.92 min |
 | 개발모드 | `gaebalmodeu` | `2026-06-18T05-32-30Z` | 100.0% | 0.00% | 0 | 1 | 4.72 min |
 | 가재모드 | `gajaemode` | `2026-06-17T18-15-38Z` | 95.0% | 0.43% | 7.807 | 0.79 | 4.45 min |
 | 게임모드 | `geimmodeu` | `2026-06-18T04-55-23Z` | 95.0% | 0.00% | 0 | 0.99 | 4.57 min |

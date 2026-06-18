@@ -1,6 +1,6 @@
 {
   "base_url": "https://raw.githubusercontent.com/UnripePlum/korean-wakeword/main",
-  "model_count": 10,
+  "model_count": 11,
   "models": [
     {
       "artifact": {
@@ -172,6 +172,97 @@
         "training_duration_seconds": 2560.67
       },
       "version": "2026-06-08T16-10-37Z",
+      "wakeword": {
+        "display": "변신",
+        "language": "ko",
+        "slug": "byeonsin"
+      }
+    },
+    {
+      "artifact": {
+        "generation_start_date": "2026-06-18",
+        "generation_started_at": "2026-06-18T08:45:39.963300Z",
+        "generation_version": "2026-06-18T08-45-39Z",
+        "json_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.json",
+        "model_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.tflite",
+        "model_sha256": "7454131f627431fb4c44ed6186e41ee69736d58cf465f0fc626b8a28673aaa93"
+      },
+      "artifact_contract": {
+        "feature_extractor": {
+          "feature_bins": 40,
+          "feature_step_size_ms": 10,
+          "frame_hop_samples": 512,
+          "sample_rate": 16000
+        },
+        "frontend": "esp_micro_speech_features",
+        "input_tensor": {
+          "dtype": "int8",
+          "shape": [
+            1,
+            3,
+            40
+          ]
+        },
+        "micro_wake_word_compatible": true,
+        "name": "micro_wake_word_v1",
+        "output_tensor": {
+          "dtype": "uint8",
+          "scale": 0.00390625,
+          "shape": [
+            1,
+            1
+          ],
+          "zero_point": 0
+        },
+        "runtime": "esphome_micro_wake_word"
+      },
+      "data_generation": {
+        "positive_sample_count": 264,
+        "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+        "tts_provider": "qwen",
+        "voice_variant_count": 4
+      },
+      "description": "변신 wakeword model",
+      "id": "byeonsin",
+      "metadata_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.json",
+      "metadata_sha256": "1ba3d6ea0637ca86dfe8ab99841b8afbdd336d5d04177fe3ac4f401dea120151",
+      "metrics": {
+        "false_accept_rate": 0.0,
+        "false_accepts_per_hour": 0.0,
+        "hard_negative_bank_sample_count": 160,
+        "hard_negative_sample_count": 160,
+        "raw_negative_detections": 0,
+        "raw_negative_total": 160,
+        "raw_positive_detected": 19,
+        "raw_positive_detection_rate": 0.95,
+        "raw_positive_total": 20,
+        "recall": 0.95
+      },
+      "model_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.tflite",
+      "model_sha256": "7454131f627431fb4c44ed6186e41ee69736d58cf465f0fc626b8a28673aaa93",
+      "name": "변신",
+      "request": {
+        "prod_issue": 12,
+        "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/12",
+        "source": "github"
+      },
+      "runtime": {
+        "feature_step_size": 10,
+        "max_detection_rms": 0.3,
+        "min_detection_crest_factor": 2.0,
+        "minimum_esphome_version": "2024.7",
+        "probability_cutoff": 1.0,
+        "sliding_window_size": 7,
+        "tensor_arena_size": 50000
+      },
+      "schema_version": 1,
+      "trainer": {
+        "source": "UnripePlum/korean-wakeword-trainer",
+        "trainer_version": "0.1.0",
+        "training_duration_minutes": 3.92,
+        "training_duration_seconds": 235.431
+      },
+      "version": "2026-06-18T08-45-39Z",
       "wakeword": {
         "display": "변신",
         "language": "ko",
