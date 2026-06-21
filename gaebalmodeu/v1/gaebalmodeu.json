@@ -8,9 +8,9 @@
   "artifact": {
     "generation_start_date": "2026-06-08",
     "generation_started_at": "2026-06-08T14:00:23.464025Z",
-    "generation_version": "2026-06-08T14-00-23Z",
-    "model_path": "gaebalmodeu/2026-06-08T14-00-23Z/gaebalmodeu.tflite",
-    "json_path": "gaebalmodeu/2026-06-08T14-00-23Z/gaebalmodeu.json"
+    "generation_version": "v1",
+    "model_path": "gaebalmodeu/v1/gaebalmodeu.tflite",
+    "json_path": "gaebalmodeu/v1/gaebalmodeu.json"
   },
   "trainer": {
     "trainer_version": "0.1.0",

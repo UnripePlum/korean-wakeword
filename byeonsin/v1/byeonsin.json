@@ -8,9 +8,9 @@
   "artifact": {
     "generation_start_date": "2026-06-08",
     "generation_started_at": "2026-06-08T16:10:37.521486Z",
-    "generation_version": "2026-06-08T16-10-37Z",
-    "model_path": "byeonsin/2026-06-08T16-10-37Z/byeonsin.tflite",
-    "json_path": "byeonsin/2026-06-08T16-10-37Z/byeonsin.json"
+    "generation_version": "v1",
+    "model_path": "byeonsin/v1/byeonsin.tflite",
+    "json_path": "byeonsin/v1/byeonsin.json"
   },
   "trainer": {
     "trainer_version": "0.1.0",

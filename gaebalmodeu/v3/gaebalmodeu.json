@@ -1,48 +1,54 @@
 {
   "schema_version": 1,
   "wakeword": {
-    "display": "게임모드",
-    "slug": "geimmodeu",
+    "display": "개발모드",
+    "slug": "gaebalmodeu",
     "language": "ko"
   },
   "artifact": {
-    "generation_start_date": "2026-06-12",
-    "generation_started_at": "2026-06-12T12:11:32.989334Z",
-    "generation_version": "2026-06-12T12-11-32Z",
-    "model_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.tflite",
-    "json_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.json"
+    "generation_start_date": "2026-06-18",
+    "generation_started_at": "2026-06-18T15:23:36.501846Z",
+    "generation_version": "v3",
+    "model_path": "gaebalmodeu/v3/gaebalmodeu.tflite",
+    "json_path": "gaebalmodeu/v3/gaebalmodeu.json",
+    "model_sha256": "8a210431468f0a496a0d06e05ddf84f4511b61ab50b1631df4b8944ccfd3076f"
   },
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer",
-    "training_duration_seconds": 4319.025,
-    "training_duration_minutes": 71.98
+    "training_duration_seconds": 290.356,
+    "training_duration_minutes": 4.84
   },
   "data_generation": {
     "tts_provider": "qwen",
     "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    "positive_sample_count": 160,
+    "positive_sample_count": 303,
     "voice_variant_count": 4
   },
   "metrics": {
-    "recall": 0.923077,
-    "false_accepts_per_hour": 15.995024,
-    "raw_positive_detection_rate": 0.923077,
-    "raw_negative_detections": 2,
-    "raw_negative_total": 240,
-    "hard_negative_sample_count": 208,
-    "hard_negative_bank_sample_count": 208
+    "recall": 0.95,
+    "false_accepts_per_hour": 0.0,
+    "false_accept_rate": 0.0,
+    "raw_positive_detection_rate": 0.95,
+    "raw_positive_detected": 19,
+    "raw_positive_total": 20,
+    "raw_negative_detections": 0,
+    "raw_negative_total": 400,
+    "hard_negative_sample_count": 400,
+    "hard_negative_bank_sample_count": 480
   },
   "runtime": {
     "probability_cutoff": 1.0,
-    "sliding_window_size": 5,
+    "sliding_window_size": 7,
+    "max_detection_rms": 0.3,
+    "min_detection_crest_factor": 2.0,
     "feature_step_size": 10,
     "tensor_arena_size": 50000,
     "minimum_esphome_version": "2024.7"
   },
   "request": {
-    "prod_issue": 13,
-    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/13",
+    "prod_issue": 9,
+    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/9",
     "source": "github"
   },
   "artifact_contract": {

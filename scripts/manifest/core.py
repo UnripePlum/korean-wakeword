@@ -25,9 +25,7 @@ RESERVED_ROOT_DIRECTORIES = {
 
 ARTIFACT_SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9_-]*$")
 GENERATION_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-GENERATION_VERSION_RE = re.compile(
-    r"^\d{4}-\d{2}-\d{2}(?:T\d{2}-\d{2}-\d{2}Z)?$"
-)
+GENERATION_VERSION_RE = re.compile(r"^v[1-9]\d*$")
 
 FORBIDDEN_PUBLIC_KEY_PARTS = (
     "token",
@@ -60,7 +58,6 @@ def build_manifest(repo_root: Path | str) -> dict[str, Any]:
         _validate_model_metadata(
             metadata=metadata,
             artifact_slug=artifact["slug"],
-            generation_start_date=artifact["date"],
             generation_version=artifact["version"],
             expected_json_path=artifact["json_rel"],
             expected_model_path=artifact["model_rel"],
@@ -156,7 +153,6 @@ def _discover_artifacts(root: Path) -> list[dict[str, Any]]:
                 continue
 
             _validate_artifact_slug(slug_dir.name)
-            generation_start_date = _generation_date_from_version(version_dir.name)
 
             json_file = version_dir / f"{slug_dir.name}.json"
             model_file = version_dir / f"{slug_dir.name}.tflite"
@@ -173,7 +169,6 @@ def _discover_artifacts(root: Path) -> list[dict[str, Any]]:
             artifacts.append(
                 {
                     "slug": slug_dir.name,
-                    "date": generation_start_date,
                     "version": version_dir.name,
                     "json_file": json_file,
                     "model_file": model_file,
@@ -201,7 +196,6 @@ def _validate_model_metadata(
     *,
     metadata: Any,
     artifact_slug: str,
-    generation_start_date: str,
     generation_version: str,
     expected_json_path: str,
     expected_model_path: str,
@@ -230,37 +224,19 @@ def _validate_model_metadata(
         raise ManifestError("wakeword.language must be 'ko'")
 
     metadata_date = _require_string(metadata, "artifact.generation_start_date")
-    if metadata_date != generation_start_date:
-        raise ManifestError(
-            "artifact.generation_start_date must match artifact directory date "
-            f"{generation_start_date!r}; got {metadata_date!r}"
-        )
     _validate_generation_start_date(metadata_date)
-    metadata_version = _optional_string(metadata, "artifact.generation_version")
-    metadata_started_at = _optional_string(metadata, "artifact.generation_started_at")
-    if generation_version != generation_start_date:
-        if metadata_version != generation_version:
-            raise ManifestError(
-                "artifact.generation_version must match artifact directory "
-                f"{generation_version!r}; got {metadata_version!r}"
-            )
-        if metadata_started_at is None:
-            raise ManifestError(
-                "artifact.generation_started_at is required for timestamped artifacts"
-            )
-    if metadata_version is not None:
-        if metadata_version != generation_version:
-            raise ManifestError(
-                "artifact.generation_version must match artifact directory "
-                f"{generation_version!r}; got {metadata_version!r}"
-            )
-        _validate_generation_version(metadata_version)
-    if metadata_started_at is not None:
-        _validate_generation_started_at(
-            metadata_started_at,
-            generation_start_date=generation_start_date,
-            generation_version=generation_version,
+    metadata_version = _require_string(metadata, "artifact.generation_version")
+    if metadata_version != generation_version:
+        raise ManifestError(
+            "artifact.generation_version must match artifact directory "
+            f"{generation_version!r}; got {metadata_version!r}"
         )
+    _validate_generation_version(metadata_version)
+    metadata_started_at = _require_string(metadata, "artifact.generation_started_at")
+    _validate_generation_started_at(
+        metadata_started_at,
+        generation_start_date=metadata_date,
+    )
 
     json_path = _require_string(metadata, "artifact.json_path")
     model_path = _require_string(metadata, "artifact.model_path")
@@ -320,30 +296,18 @@ def _validate_generation_start_date(value: str) -> None:
         raise ManifestError(f"invalid generation_start_date: {value}") from exc
 
 
-def _generation_date_from_version(value: str) -> str:
-    _validate_generation_version(value)
-    return value[:10]
-
 
 def _validate_generation_version(value: str) -> None:
     if not GENERATION_VERSION_RE.fullmatch(value):
         raise ManifestError(
-            "generation_version must use YYYY-MM-DD or YYYY-MM-DDTHH-MM-SSZ"
+            "generation_version must use a sequential vN label, e.g. v1, v2"
         )
-    if GENERATION_DATE_RE.fullmatch(value):
-        _validate_generation_start_date(value)
-        return
-    try:
-        datetime.strptime(value, "%Y-%m-%dT%H-%M-%SZ")
-    except ValueError as exc:
-        raise ManifestError(f"invalid generation_version: {value}") from exc
 
 
 def _validate_generation_started_at(
     value: str,
     *,
     generation_start_date: str,
-    generation_version: str,
 ) -> None:
     if not value.endswith("Z"):
         raise ManifestError("generation_started_at must be a UTC timestamp ending in Z")
@@ -357,11 +321,6 @@ def _validate_generation_started_at(
     if started_at.date().isoformat() != generation_start_date:
         raise ManifestError(
             "generation_started_at date must match generation_start_date"
-        )
-    expected_version = started_at.strftime("%Y-%m-%dT%H-%M-%SZ")
-    if generation_version != generation_start_date and expected_version != generation_version:
-        raise ManifestError(
-            "generation_started_at must match artifact.generation_version"
         )
 
 

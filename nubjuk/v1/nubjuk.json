@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "wakeword": {
-    "display": "업무시작",
-    "slug": "workstart",
+    "display": "넙죽",
+    "slug": "nubjuk",
     "language": "ko"
   },
   "artifact": {
     "generation_start_date": "2026-06-17",
-    "generation_started_at": "2026-06-17T20:08:04.666073Z",
-    "generation_version": "2026-06-17T20-08-04Z",
-    "model_path": "workstart/2026-06-17T20-08-04Z/workstart.tflite",
-    "json_path": "workstart/2026-06-17T20-08-04Z/workstart.json",
-    "model_sha256": "8f12dfd34cfe61b37d72757f55f47057ecde6d0a5cbab77b933a325291036cb4"
+    "generation_started_at": "2026-06-17T20:16:06.935957Z",
+    "generation_version": "v1",
+    "model_path": "nubjuk/v1/nubjuk.tflite",
+    "json_path": "nubjuk/v1/nubjuk.json",
+    "model_sha256": "476d1e5c8a9c1f61607e9a17b4527a44036a95078e33d143ddd10f5a61313feb"
   },
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer",
-    "training_duration_seconds": 250.909,
-    "training_duration_minutes": 4.18
+    "training_duration_seconds": 221.222,
+    "training_duration_minutes": 3.69
   },
   "data_generation": {
     "tts_provider": "qwen",
     "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    "positive_sample_count": 336,
+    "positive_sample_count": 227,
     "voice_variant_count": 4
   },
   "metrics": {
     "recall": 0.95,
-    "false_accepts_per_hour": 7.87195,
-    "false_accept_rate": 0.00431,
+    "false_accepts_per_hour": 0.0,
+    "false_accept_rate": 0.0,
     "raw_positive_detection_rate": 0.95,
     "raw_positive_detected": 19,
     "raw_positive_total": 20,
-    "raw_negative_detections": 1,
+    "raw_negative_detections": 0,
     "raw_negative_total": 232,
     "hard_negative_sample_count": 232,
     "hard_negative_bank_sample_count": 232
   },
   "runtime": {
-    "probability_cutoff": 0.62,
+    "probability_cutoff": 1.0,
     "sliding_window_size": 7,
     "max_detection_rms": 0.3,
     "min_detection_crest_factor": 2.0,

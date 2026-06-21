@@ -1,41 +1,41 @@
 {
   "schema_version": 1,
   "wakeword": {
-    "display": "넙죽",
-    "slug": "nubjuk",
+    "display": "개발모드",
+    "slug": "gaebalmodeu",
     "language": "ko"
   },
   "artifact": {
-    "generation_start_date": "2026-06-17",
-    "generation_started_at": "2026-06-17T20:16:06.935957Z",
-    "generation_version": "2026-06-17T20-16-06Z",
-    "model_path": "nubjuk/2026-06-17T20-16-06Z/nubjuk.tflite",
-    "json_path": "nubjuk/2026-06-17T20-16-06Z/nubjuk.json",
-    "model_sha256": "476d1e5c8a9c1f61607e9a17b4527a44036a95078e33d143ddd10f5a61313feb"
+    "generation_start_date": "2026-06-18",
+    "generation_started_at": "2026-06-18T05:32:30.903509Z",
+    "generation_version": "v2",
+    "model_path": "gaebalmodeu/v2/gaebalmodeu.tflite",
+    "json_path": "gaebalmodeu/v2/gaebalmodeu.json",
+    "model_sha256": "9d0619c043842df4f3d9c75eb66a655a584390f7bfecf5214cf4139d4f53de7a"
   },
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer",
-    "training_duration_seconds": 221.222,
-    "training_duration_minutes": 3.69
+    "training_duration_seconds": 283.037,
+    "training_duration_minutes": 4.72
   },
   "data_generation": {
     "tts_provider": "qwen",
     "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    "positive_sample_count": 227,
+    "positive_sample_count": 323,
     "voice_variant_count": 4
   },
   "metrics": {
-    "recall": 0.95,
+    "recall": 1.0,
     "false_accepts_per_hour": 0.0,
     "false_accept_rate": 0.0,
-    "raw_positive_detection_rate": 0.95,
-    "raw_positive_detected": 19,
+    "raw_positive_detection_rate": 1.0,
+    "raw_positive_detected": 20,
     "raw_positive_total": 20,
     "raw_negative_detections": 0,
-    "raw_negative_total": 232,
-    "hard_negative_sample_count": 232,
-    "hard_negative_bank_sample_count": 232
+    "raw_negative_total": 160,
+    "hard_negative_sample_count": 160,
+    "hard_negative_bank_sample_count": 160
   },
   "runtime": {
     "probability_cutoff": 1.0,
@@ -47,9 +47,9 @@
     "minimum_esphome_version": "2024.7"
   },
   "request": {
-    "prod_issue": 0,
-    "prod_issue_url": "",
-    "source": "local-training"
+    "prod_issue": 9,
+    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/9",
+    "source": "github"
   },
   "artifact_contract": {
     "name": "micro_wake_word_v1",

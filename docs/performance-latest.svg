@@ -22,7 +22,7 @@
 <text x="548" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
 <text x="798" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.21 min</text>
-<text x="928" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-17T21-08-48Z</text>
+<text x="928" y="132" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="146" width="1080" height="30" rx="6" fill="#f1f5f9"/>
 <text x="28" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">변신</text>
 <text x="188" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">byeonsin</text>
@@ -31,7 +31,7 @@
 <text x="548" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
 <text x="798" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">3.92 min</text>
-<text x="928" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-18T08-45-39Z</text>
+<text x="928" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v2</text>
 <rect x="20" y="180" width="1080" height="30" rx="6" fill="#ffffff"/>
 <text x="28" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">개발모드</text>
 <text x="188" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">gaebalmodeu</text>
@@ -40,7 +40,7 @@
 <text x="548" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
 <text x="798" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.84 min</text>
-<text x="928" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-18T15-23-36Z</text>
+<text x="928" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v3</text>
 <rect x="20" y="214" width="1080" height="30" rx="6" fill="#f1f5f9"/>
 <text x="28" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">가재모드</text>
 <text x="188" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">gajaemode</text>
@@ -49,7 +49,7 @@
 <text x="548" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.999</text>
 <text x="798" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">14.34 min</text>
-<text x="928" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-18T20-03-01Z</text>
+<text x="928" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v2</text>
 <rect x="20" y="248" width="1080" height="30" rx="6" fill="#ffffff"/>
 <text x="28" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">게임모드</text>
 <text x="188" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">geimmodeu</text>
@@ -58,7 +58,7 @@
 <text x="548" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.955</text>
 <text x="798" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.07 min</text>
-<text x="928" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-18T20-03-02Z</text>
+<text x="928" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v3</text>
 <rect x="20" y="282" width="1080" height="30" rx="6" fill="#f1f5f9"/>
 <text x="28" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">자비스</text>
 <text x="188" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">jarvis</text>
@@ -67,7 +67,7 @@
 <text x="548" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.904</text>
 <text x="678" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
 <text x="798" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.29 min</text>
-<text x="928" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-17T19-55-59Z</text>
+<text x="928" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="316" width="1080" height="30" rx="6" fill="#ffffff"/>
 <text x="28" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">넙죽</text>
 <text x="188" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">nubjuk</text>
@@ -76,7 +76,7 @@
 <text x="548" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
 <text x="798" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">3.69 min</text>
-<text x="928" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-17T20-16-06Z</text>
+<text x="928" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="350" width="1080" height="30" rx="6" fill="#f1f5f9"/>
 <text x="28" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">업무시작</text>
 <text x="188" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">workstart</text>
@@ -85,5 +85,5 @@
 <text x="548" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.872</text>
 <text x="678" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.62</text>
 <text x="798" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.18 min</text>
-<text x="928" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">2026-06-17T20-08-04Z</text>
+<text x="928" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 </svg>

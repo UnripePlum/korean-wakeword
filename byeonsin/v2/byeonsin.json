@@ -1,28 +1,28 @@
 {
   "schema_version": 1,
   "wakeword": {
-    "display": "바둑이",
-    "slug": "baduki",
+    "display": "변신",
+    "slug": "byeonsin",
     "language": "ko"
   },
   "artifact": {
-    "generation_start_date": "2026-06-17",
-    "generation_started_at": "2026-06-17T21:08:48.726690Z",
-    "generation_version": "2026-06-17T21-08-48Z",
-    "model_path": "baduki/2026-06-17T21-08-48Z/baduki.tflite",
-    "json_path": "baduki/2026-06-17T21-08-48Z/baduki.json",
-    "model_sha256": "27a6198026ada6a0d8daf8659a48c9ee883854f9efb5a891d42ca82d249954cd"
+    "generation_start_date": "2026-06-18",
+    "generation_started_at": "2026-06-18T08:45:39.963300Z",
+    "generation_version": "v2",
+    "model_path": "byeonsin/v2/byeonsin.tflite",
+    "json_path": "byeonsin/v2/byeonsin.json",
+    "model_sha256": "7454131f627431fb4c44ed6186e41ee69736d58cf465f0fc626b8a28673aaa93"
   },
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer",
-    "training_duration_seconds": 252.746,
-    "training_duration_minutes": 4.21
+    "training_duration_seconds": 235.431,
+    "training_duration_minutes": 3.92
   },
   "data_generation": {
     "tts_provider": "qwen",
     "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    "positive_sample_count": 259,
+    "positive_sample_count": 264,
     "voice_variant_count": 4
   },
   "metrics": {
@@ -33,9 +33,9 @@
     "raw_positive_detected": 19,
     "raw_positive_total": 20,
     "raw_negative_detections": 0,
-    "raw_negative_total": 232,
-    "hard_negative_sample_count": 232,
-    "hard_negative_bank_sample_count": 232
+    "raw_negative_total": 160,
+    "hard_negative_sample_count": 160,
+    "hard_negative_bank_sample_count": 160
   },
   "runtime": {
     "probability_cutoff": 1.0,
@@ -47,8 +47,8 @@
     "minimum_esphome_version": "2024.7"
   },
   "request": {
-    "prod_issue": 6,
-    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/6",
+    "prod_issue": 12,
+    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/12",
     "source": "github"
   },
   "artifact_contract": {

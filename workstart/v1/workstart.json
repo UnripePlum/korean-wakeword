@@ -1,45 +1,44 @@
 {
   "schema_version": 1,
   "wakeword": {
-    "display": "가재모드",
-    "slug": "gajaemode",
+    "display": "업무시작",
+    "slug": "workstart",
     "language": "ko"
   },
   "artifact": {
-    "generation_start_date": "2026-06-18",
-    "generation_started_at": "2026-06-18T20:03:01Z",
-    "generation_version": "2026-06-18T20-03-01Z",
-    "model_path": "gajaemode/2026-06-18T20-03-01Z/gajaemode.tflite",
-    "json_path": "gajaemode/2026-06-18T20-03-01Z/gajaemode.json",
-    "model_sha256": "00d4c8ee3e5b0bba1d3489a1fb928fdc584bddd6eba7aae287169a2007532bde"
+    "generation_start_date": "2026-06-17",
+    "generation_started_at": "2026-06-17T20:08:04.666073Z",
+    "generation_version": "v1",
+    "model_path": "workstart/v1/workstart.tflite",
+    "json_path": "workstart/v1/workstart.json",
+    "model_sha256": "8f12dfd34cfe61b37d72757f55f47057ecde6d0a5cbab77b933a325291036cb4"
   },
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer",
-    "training_duration_seconds": 860.353,
-    "training_duration_minutes": 14.34
+    "training_duration_seconds": 250.909,
+    "training_duration_minutes": 4.18
   },
   "data_generation": {
     "tts_provider": "qwen",
     "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    "positive_sample_count": 380,
+    "positive_sample_count": 336,
     "voice_variant_count": 4
   },
   "metrics": {
-    "recall": 0.93,
-    "false_accepts_per_hour": 0.0,
-    "false_accept_rate": 0.0,
-    "raw_positive_detection_rate": 0.93,
-    "raw_positive_detected": 372,
-    "raw_positive_total": 400,
-    "raw_negative_detections": 0,
-    "raw_negative_total": 828,
-    "hard_negative_sample_count": 828,
-    "hard_negative_bank_sample_count": 428,
-    "hard_negative_general_sample_count": 320
+    "recall": 0.95,
+    "false_accepts_per_hour": 7.87195,
+    "false_accept_rate": 0.00431,
+    "raw_positive_detection_rate": 0.95,
+    "raw_positive_detected": 19,
+    "raw_positive_total": 20,
+    "raw_negative_detections": 1,
+    "raw_negative_total": 232,
+    "hard_negative_sample_count": 232,
+    "hard_negative_bank_sample_count": 232
   },
   "runtime": {
-    "probability_cutoff": 0.999,
+    "probability_cutoff": 0.62,
     "sliding_window_size": 7,
     "max_detection_rms": 0.3,
     "min_detection_crest_factor": 2.0,

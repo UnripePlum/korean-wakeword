@@ -6,9 +6,9 @@
       "artifact": {
         "generation_start_date": "2026-06-17",
         "generation_started_at": "2026-06-17T21:08:48.726690Z",
-        "generation_version": "2026-06-17T21-08-48Z",
-        "json_path": "baduki/2026-06-17T21-08-48Z/baduki.json",
-        "model_path": "baduki/2026-06-17T21-08-48Z/baduki.tflite",
+        "generation_version": "v1",
+        "json_path": "baduki/v1/baduki.json",
+        "model_path": "baduki/v1/baduki.tflite",
         "model_sha256": "27a6198026ada6a0d8daf8659a48c9ee883854f9efb5a891d42ca82d249954cd"
       },
       "artifact_contract": {
@@ -48,8 +48,8 @@
       },
       "description": "바둑이 wakeword model",
       "id": "baduki",
-      "metadata_path": "baduki/2026-06-17T21-08-48Z/baduki.json",
-      "metadata_sha256": "3cbef93c62b546b882b135530821d9c052bc151a117781039db25760bed91d58",
+      "metadata_path": "baduki/v1/baduki.json",
+      "metadata_sha256": "1eae51dd2883be4196a93f779b1485c6a25b786645a276e143fbc13c4a741d41",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -62,7 +62,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "baduki/2026-06-17T21-08-48Z/baduki.tflite",
+      "model_path": "baduki/v1/baduki.tflite",
       "model_sha256": "27a6198026ada6a0d8daf8659a48c9ee883854f9efb5a891d42ca82d249954cd",
       "name": "바둑이",
       "request": {
@@ -86,7 +86,7 @@
         "training_duration_minutes": 4.21,
         "training_duration_seconds": 252.746
       },
-      "version": "2026-06-17T21-08-48Z",
+      "version": "v1",
       "wakeword": {
         "display": "바둑이",
         "language": "ko",
@@ -97,9 +97,9 @@
       "artifact": {
         "generation_start_date": "2026-06-08",
         "generation_started_at": "2026-06-08T16:10:37.521486Z",
-        "generation_version": "2026-06-08T16-10-37Z",
-        "json_path": "byeonsin/2026-06-08T16-10-37Z/byeonsin.json",
-        "model_path": "byeonsin/2026-06-08T16-10-37Z/byeonsin.tflite"
+        "generation_version": "v1",
+        "json_path": "byeonsin/v1/byeonsin.json",
+        "model_path": "byeonsin/v1/byeonsin.tflite"
       },
       "artifact_contract": {
         "feature_extractor": {
@@ -138,8 +138,8 @@
       },
       "description": "변신 wakeword model",
       "id": "byeonsin",
-      "metadata_path": "byeonsin/2026-06-08T16-10-37Z/byeonsin.json",
-      "metadata_sha256": "96e9cd65b4552645243adaf9bbcd3fb39407fef505b75273fc7aab5aacd43807",
+      "metadata_path": "byeonsin/v1/byeonsin.json",
+      "metadata_sha256": "7b96bfd6f57294a3f579fe08bf0bf21d87306b1125adfa076f713cbfa1875e08",
       "metrics": {
         "false_accepts_per_hour": 15.41954,
         "hard_negative_bank_sample_count": 160,
@@ -149,7 +149,7 @@
         "raw_positive_detection_rate": 0.865385,
         "recall": 0.865385
       },
-      "model_path": "byeonsin/2026-06-08T16-10-37Z/byeonsin.tflite",
+      "model_path": "byeonsin/v1/byeonsin.tflite",
       "model_sha256": "d195edce2c0d1f6fd07ff27d69e410f22350a5f6c897be280e4333376772b362",
       "name": "변신",
       "request": {
@@ -171,7 +171,7 @@
         "training_duration_minutes": 42.68,
         "training_duration_seconds": 2560.67
       },
-      "version": "2026-06-08T16-10-37Z",
+      "version": "v1",
       "wakeword": {
         "display": "변신",
         "language": "ko",
@@ -182,9 +182,9 @@
       "artifact": {
         "generation_start_date": "2026-06-18",
         "generation_started_at": "2026-06-18T08:45:39.963300Z",
-        "generation_version": "2026-06-18T08-45-39Z",
-        "json_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.json",
-        "model_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.tflite",
+        "generation_version": "v2",
+        "json_path": "byeonsin/v2/byeonsin.json",
+        "model_path": "byeonsin/v2/byeonsin.tflite",
         "model_sha256": "7454131f627431fb4c44ed6186e41ee69736d58cf465f0fc626b8a28673aaa93"
       },
       "artifact_contract": {
@@ -224,8 +224,8 @@
       },
       "description": "변신 wakeword model",
       "id": "byeonsin",
-      "metadata_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.json",
-      "metadata_sha256": "1ba3d6ea0637ca86dfe8ab99841b8afbdd336d5d04177fe3ac4f401dea120151",
+      "metadata_path": "byeonsin/v2/byeonsin.json",
+      "metadata_sha256": "df21fec0ad122b262dc3af6371fda605f925f2cea321691deb5cc284e515598e",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -238,7 +238,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "byeonsin/2026-06-18T08-45-39Z/byeonsin.tflite",
+      "model_path": "byeonsin/v2/byeonsin.tflite",
       "model_sha256": "7454131f627431fb4c44ed6186e41ee69736d58cf465f0fc626b8a28673aaa93",
       "name": "변신",
       "request": {
@@ -262,7 +262,7 @@
         "training_duration_minutes": 3.92,
         "training_duration_seconds": 235.431
       },
-      "version": "2026-06-18T08-45-39Z",
+      "version": "v2",
       "wakeword": {
         "display": "변신",
         "language": "ko",
@@ -273,9 +273,9 @@
       "artifact": {
         "generation_start_date": "2026-06-08",
         "generation_started_at": "2026-06-08T14:00:23.464025Z",
-        "generation_version": "2026-06-08T14-00-23Z",
-        "json_path": "gaebalmodeu/2026-06-08T14-00-23Z/gaebalmodeu.json",
-        "model_path": "gaebalmodeu/2026-06-08T14-00-23Z/gaebalmodeu.tflite"
+        "generation_version": "v1",
+        "json_path": "gaebalmodeu/v1/gaebalmodeu.json",
+        "model_path": "gaebalmodeu/v1/gaebalmodeu.tflite"
       },
       "artifact_contract": {
         "feature_extractor": {
@@ -314,8 +314,8 @@
       },
       "description": "개발모드 wakeword model",
       "id": "gaebalmodeu",
-      "metadata_path": "gaebalmodeu/2026-06-08T14-00-23Z/gaebalmodeu.json",
-      "metadata_sha256": "eafeb52dc5838ea3ac29d96d5d602a270a1c4c26f1054e04428474bb82d647d1",
+      "metadata_path": "gaebalmodeu/v1/gaebalmodeu.json",
+      "metadata_sha256": "3ee3851b53186a5b0f5ad0cf5d27bce1de2853d0675d3faf637f9072db085634",
       "metrics": {
         "false_accepts_per_hour": 15.792937,
         "hard_negative_bank_sample_count": 160,
@@ -325,7 +325,7 @@
         "raw_positive_detection_rate": 0.952381,
         "recall": 0.952381
       },
-      "model_path": "gaebalmodeu/2026-06-08T14-00-23Z/gaebalmodeu.tflite",
+      "model_path": "gaebalmodeu/v1/gaebalmodeu.tflite",
       "model_sha256": "8fe3c3b4b048797103dddc8361a155b3a74cf68e18bb661ad4d71b8a20f4be0b",
       "name": "개발모드",
       "request": {
@@ -347,7 +347,7 @@
         "training_duration_minutes": 41.37,
         "training_duration_seconds": 2482.02
       },
-      "version": "2026-06-08T14-00-23Z",
+      "version": "v1",
       "wakeword": {
         "display": "개발모드",
         "language": "ko",
@@ -358,9 +358,9 @@
       "artifact": {
         "generation_start_date": "2026-06-18",
         "generation_started_at": "2026-06-18T05:32:30.903509Z",
-        "generation_version": "2026-06-18T05-32-30Z",
-        "json_path": "gaebalmodeu/2026-06-18T05-32-30Z/gaebalmodeu.json",
-        "model_path": "gaebalmodeu/2026-06-18T05-32-30Z/gaebalmodeu.tflite",
+        "generation_version": "v2",
+        "json_path": "gaebalmodeu/v2/gaebalmodeu.json",
+        "model_path": "gaebalmodeu/v2/gaebalmodeu.tflite",
         "model_sha256": "9d0619c043842df4f3d9c75eb66a655a584390f7bfecf5214cf4139d4f53de7a"
       },
       "artifact_contract": {
@@ -400,8 +400,8 @@
       },
       "description": "개발모드 wakeword model",
       "id": "gaebalmodeu",
-      "metadata_path": "gaebalmodeu/2026-06-18T05-32-30Z/gaebalmodeu.json",
-      "metadata_sha256": "bf668c279cd0d942b5c7d02dc89e1b028173d0c78224e0fcd1cc2353fa066d23",
+      "metadata_path": "gaebalmodeu/v2/gaebalmodeu.json",
+      "metadata_sha256": "fda38791fc7af11fd0932a7876791ed771ebe51faf070017e9035f45bb8e127d",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -414,7 +414,7 @@
         "raw_positive_total": 20,
         "recall": 1.0
       },
-      "model_path": "gaebalmodeu/2026-06-18T05-32-30Z/gaebalmodeu.tflite",
+      "model_path": "gaebalmodeu/v2/gaebalmodeu.tflite",
       "model_sha256": "9d0619c043842df4f3d9c75eb66a655a584390f7bfecf5214cf4139d4f53de7a",
       "name": "개발모드",
       "request": {
@@ -438,7 +438,7 @@
         "training_duration_minutes": 4.72,
         "training_duration_seconds": 283.037
       },
-      "version": "2026-06-18T05-32-30Z",
+      "version": "v2",
       "wakeword": {
         "display": "개발모드",
         "language": "ko",
@@ -449,9 +449,9 @@
       "artifact": {
         "generation_start_date": "2026-06-18",
         "generation_started_at": "2026-06-18T15:23:36.501846Z",
-        "generation_version": "2026-06-18T15-23-36Z",
-        "json_path": "gaebalmodeu/2026-06-18T15-23-36Z/gaebalmodeu.json",
-        "model_path": "gaebalmodeu/2026-06-18T15-23-36Z/gaebalmodeu.tflite",
+        "generation_version": "v3",
+        "json_path": "gaebalmodeu/v3/gaebalmodeu.json",
+        "model_path": "gaebalmodeu/v3/gaebalmodeu.tflite",
         "model_sha256": "8a210431468f0a496a0d06e05ddf84f4511b61ab50b1631df4b8944ccfd3076f"
       },
       "artifact_contract": {
@@ -491,8 +491,8 @@
       },
       "description": "개발모드 wakeword model",
       "id": "gaebalmodeu",
-      "metadata_path": "gaebalmodeu/2026-06-18T15-23-36Z/gaebalmodeu.json",
-      "metadata_sha256": "8816d26cba3452f40128a6746ab93745574a973fdcb95f617aed1869457c1448",
+      "metadata_path": "gaebalmodeu/v3/gaebalmodeu.json",
+      "metadata_sha256": "9bf5dc6ece11c9ca741cf4d7300fdfc33bfa17af265c8c788f6e887ce36e57c2",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -505,7 +505,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "gaebalmodeu/2026-06-18T15-23-36Z/gaebalmodeu.tflite",
+      "model_path": "gaebalmodeu/v3/gaebalmodeu.tflite",
       "model_sha256": "8a210431468f0a496a0d06e05ddf84f4511b61ab50b1631df4b8944ccfd3076f",
       "name": "개발모드",
       "request": {
@@ -529,7 +529,7 @@
         "training_duration_minutes": 4.84,
         "training_duration_seconds": 290.356
       },
-      "version": "2026-06-18T15-23-36Z",
+      "version": "v3",
       "wakeword": {
         "display": "개발모드",
         "language": "ko",
@@ -540,9 +540,9 @@
       "artifact": {
         "generation_start_date": "2026-06-17",
         "generation_started_at": "2026-06-17T18:15:38.000800Z",
-        "generation_version": "2026-06-17T18-15-38Z",
-        "json_path": "gajaemode/2026-06-17T18-15-38Z/gajaemode.json",
-        "model_path": "gajaemode/2026-06-17T18-15-38Z/gajaemode.tflite",
+        "generation_version": "v1",
+        "json_path": "gajaemode/v1/gajaemode.json",
+        "model_path": "gajaemode/v1/gajaemode.tflite",
         "model_sha256": "501491e65917d3af49e788d890c24423ca04846cd8b6402a6bc09187c41b1d81"
       },
       "artifact_contract": {
@@ -582,8 +582,8 @@
       },
       "description": "가재모드 wakeword model",
       "id": "gajaemode",
-      "metadata_path": "gajaemode/2026-06-17T18-15-38Z/gajaemode.json",
-      "metadata_sha256": "6f1612bda6136d839feeffc8d06dbc065a9be7b9a402dd6d43d04b273011159f",
+      "metadata_path": "gajaemode/v1/gajaemode.json",
+      "metadata_sha256": "a38fd6d96d16b1c76d1c86587ced9ff0620f3423063e0f46081b064100e42828",
       "metrics": {
         "false_accept_rate": 0.00431,
         "false_accepts_per_hour": 7.807417,
@@ -596,7 +596,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "gajaemode/2026-06-17T18-15-38Z/gajaemode.tflite",
+      "model_path": "gajaemode/v1/gajaemode.tflite",
       "model_sha256": "501491e65917d3af49e788d890c24423ca04846cd8b6402a6bc09187c41b1d81",
       "name": "가재모드",
       "request": {
@@ -620,7 +620,7 @@
         "training_duration_minutes": 4.45,
         "training_duration_seconds": 267.09
       },
-      "version": "2026-06-17T18-15-38Z",
+      "version": "v1",
       "wakeword": {
         "display": "가재모드",
         "language": "ko",
@@ -631,9 +631,9 @@
       "artifact": {
         "generation_start_date": "2026-06-18",
         "generation_started_at": "2026-06-18T20:03:01Z",
-        "generation_version": "2026-06-18T20-03-01Z",
-        "json_path": "gajaemode/2026-06-18T20-03-01Z/gajaemode.json",
-        "model_path": "gajaemode/2026-06-18T20-03-01Z/gajaemode.tflite",
+        "generation_version": "v2",
+        "json_path": "gajaemode/v2/gajaemode.json",
+        "model_path": "gajaemode/v2/gajaemode.tflite",
         "model_sha256": "00d4c8ee3e5b0bba1d3489a1fb928fdc584bddd6eba7aae287169a2007532bde"
       },
       "artifact_contract": {
@@ -673,8 +673,8 @@
       },
       "description": "가재모드 wakeword model",
       "id": "gajaemode",
-      "metadata_path": "gajaemode/2026-06-18T20-03-01Z/gajaemode.json",
-      "metadata_sha256": "71d1c94ee6e9e70368b4eae7dc5ce2c550375e4a2a6acdd6dbe94ee9312a1623",
+      "metadata_path": "gajaemode/v2/gajaemode.json",
+      "metadata_sha256": "d2435bd5b2fee13c1986ee2a37d98b02bc40ff8cc5bcca6b80620cef15d3a417",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -688,7 +688,7 @@
         "raw_positive_total": 400,
         "recall": 0.93
       },
-      "model_path": "gajaemode/2026-06-18T20-03-01Z/gajaemode.tflite",
+      "model_path": "gajaemode/v2/gajaemode.tflite",
       "model_sha256": "00d4c8ee3e5b0bba1d3489a1fb928fdc584bddd6eba7aae287169a2007532bde",
       "name": "가재모드",
       "request": {
@@ -712,7 +712,7 @@
         "training_duration_minutes": 14.34,
         "training_duration_seconds": 860.353
       },
-      "version": "2026-06-18T20-03-01Z",
+      "version": "v2",
       "wakeword": {
         "display": "가재모드",
         "language": "ko",
@@ -723,9 +723,9 @@
       "artifact": {
         "generation_start_date": "2026-06-12",
         "generation_started_at": "2026-06-12T12:11:32.989334Z",
-        "generation_version": "2026-06-12T12-11-32Z",
-        "json_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.json",
-        "model_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.tflite"
+        "generation_version": "v1",
+        "json_path": "geimmodeu/v1/geimmodeu.json",
+        "model_path": "geimmodeu/v1/geimmodeu.tflite"
       },
       "artifact_contract": {
         "feature_extractor": {
@@ -764,8 +764,8 @@
       },
       "description": "게임모드 wakeword model",
       "id": "geimmodeu",
-      "metadata_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.json",
-      "metadata_sha256": "1a9df8a46d80fb680761cef80357d27664e426d1a8af1d5231b83e810f87e91e",
+      "metadata_path": "geimmodeu/v1/geimmodeu.json",
+      "metadata_sha256": "613c2493aec165a23a293d0545ac1744bdf3bd36599f338950dd443b38de28b5",
       "metrics": {
         "false_accepts_per_hour": 15.995024,
         "hard_negative_bank_sample_count": 208,
@@ -775,7 +775,7 @@
         "raw_positive_detection_rate": 0.923077,
         "recall": 0.923077
       },
-      "model_path": "geimmodeu/2026-06-12T12-11-32Z/geimmodeu.tflite",
+      "model_path": "geimmodeu/v1/geimmodeu.tflite",
       "model_sha256": "afc12d892d8988ee23cc8db622719b497397e503ba8e6f56b50a1aafbffb2863",
       "name": "게임모드",
       "request": {
@@ -797,7 +797,7 @@
         "training_duration_minutes": 71.98,
         "training_duration_seconds": 4319.025
       },
-      "version": "2026-06-12T12-11-32Z",
+      "version": "v1",
       "wakeword": {
         "display": "게임모드",
         "language": "ko",
@@ -808,9 +808,9 @@
       "artifact": {
         "generation_start_date": "2026-06-18",
         "generation_started_at": "2026-06-18T04:55:23.401823Z",
-        "generation_version": "2026-06-18T04-55-23Z",
-        "json_path": "geimmodeu/2026-06-18T04-55-23Z/geimmodeu.json",
-        "model_path": "geimmodeu/2026-06-18T04-55-23Z/geimmodeu.tflite",
+        "generation_version": "v2",
+        "json_path": "geimmodeu/v2/geimmodeu.json",
+        "model_path": "geimmodeu/v2/geimmodeu.tflite",
         "model_sha256": "9841717db73d4219e885c66c3779d3b9683785b1e6f1024eb4ec890799ef2c80"
       },
       "artifact_contract": {
@@ -850,8 +850,8 @@
       },
       "description": "게임모드 wakeword model",
       "id": "geimmodeu",
-      "metadata_path": "geimmodeu/2026-06-18T04-55-23Z/geimmodeu.json",
-      "metadata_sha256": "8c23758920c5429bceba510d83061eca7f096c2b654b7278749bba6f9d4d6d79",
+      "metadata_path": "geimmodeu/v2/geimmodeu.json",
+      "metadata_sha256": "790a5b79218a46ec0d269c85ffedf80d65aefae576e87201a83ae3399b107159",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -864,7 +864,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "geimmodeu/2026-06-18T04-55-23Z/geimmodeu.tflite",
+      "model_path": "geimmodeu/v2/geimmodeu.tflite",
       "model_sha256": "9841717db73d4219e885c66c3779d3b9683785b1e6f1024eb4ec890799ef2c80",
       "name": "게임모드",
       "request": {
@@ -888,7 +888,7 @@
         "training_duration_minutes": 4.57,
         "training_duration_seconds": 274.083
       },
-      "version": "2026-06-18T04-55-23Z",
+      "version": "v2",
       "wakeword": {
         "display": "게임모드",
         "language": "ko",
@@ -899,9 +899,9 @@
       "artifact": {
         "generation_start_date": "2026-06-18",
         "generation_started_at": "2026-06-18T20:03:02Z",
-        "generation_version": "2026-06-18T20-03-02Z",
-        "json_path": "geimmodeu/2026-06-18T20-03-02Z/geimmodeu.json",
-        "model_path": "geimmodeu/2026-06-18T20-03-02Z/geimmodeu.tflite",
+        "generation_version": "v3",
+        "json_path": "geimmodeu/v3/geimmodeu.json",
+        "model_path": "geimmodeu/v3/geimmodeu.tflite",
         "model_sha256": "cded611cf0d3548ebd92b0159bd7cda7f439c65cac9906d5e10cfb00eef50b95"
       },
       "artifact_contract": {
@@ -941,8 +941,8 @@
       },
       "description": "게임모드 wakeword model",
       "id": "geimmodeu",
-      "metadata_path": "geimmodeu/2026-06-18T20-03-02Z/geimmodeu.json",
-      "metadata_sha256": "79357528a4b43f20bfae5d8fb4b08ca6d9b84f5ebef77813d915135108edd6d5",
+      "metadata_path": "geimmodeu/v3/geimmodeu.json",
+      "metadata_sha256": "cf56f362871e11c5b203917c18142001c9bc94383d09f78d0f9ad7f0b4fb3d30",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -956,7 +956,7 @@
         "raw_positive_total": 400,
         "recall": 0.9575
       },
-      "model_path": "geimmodeu/2026-06-18T20-03-02Z/geimmodeu.tflite",
+      "model_path": "geimmodeu/v3/geimmodeu.tflite",
       "model_sha256": "cded611cf0d3548ebd92b0159bd7cda7f439c65cac9906d5e10cfb00eef50b95",
       "name": "게임모드",
       "request": {
@@ -980,7 +980,7 @@
         "training_duration_minutes": 7.07,
         "training_duration_seconds": 424.452
       },
-      "version": "2026-06-18T20-03-02Z",
+      "version": "v3",
       "wakeword": {
         "display": "게임모드",
         "language": "ko",
@@ -991,9 +991,9 @@
       "artifact": {
         "generation_start_date": "2026-06-17",
         "generation_started_at": "2026-06-17T19:55:59.121614Z",
-        "generation_version": "2026-06-17T19-55-59Z",
-        "json_path": "jarvis/2026-06-17T19-55-59Z/jarvis.json",
-        "model_path": "jarvis/2026-06-17T19-55-59Z/jarvis.tflite",
+        "generation_version": "v1",
+        "json_path": "jarvis/v1/jarvis.json",
+        "model_path": "jarvis/v1/jarvis.tflite",
         "model_sha256": "3ad169ce0dd4e5b75374b1f27ecc205ddfaa87edde65e9562a40c47c35a61af0"
       },
       "artifact_contract": {
@@ -1033,8 +1033,8 @@
       },
       "description": "자비스 wakeword model",
       "id": "jarvis",
-      "metadata_path": "jarvis/2026-06-17T19-55-59Z/jarvis.json",
-      "metadata_sha256": "8492e69d3ae98d3653303f60e38485ae40c353be91605a5cd150e177487a760b",
+      "metadata_path": "jarvis/v1/jarvis.json",
+      "metadata_sha256": "850e54527350c6c5fc781c9a4e1ec127c22a91ac00726564f151569962b2ff95",
       "metrics": {
         "false_accept_rate": 0.00431,
         "false_accepts_per_hour": 7.904444,
@@ -1047,7 +1047,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "jarvis/2026-06-17T19-55-59Z/jarvis.tflite",
+      "model_path": "jarvis/v1/jarvis.tflite",
       "model_sha256": "3ad169ce0dd4e5b75374b1f27ecc205ddfaa87edde65e9562a40c47c35a61af0",
       "name": "자비스",
       "request": {
@@ -1071,7 +1071,7 @@
         "training_duration_minutes": 4.29,
         "training_duration_seconds": 257.608
       },
-      "version": "2026-06-17T19-55-59Z",
+      "version": "v1",
       "wakeword": {
         "display": "자비스",
         "language": "ko",
@@ -1082,9 +1082,9 @@
       "artifact": {
         "generation_start_date": "2026-06-17",
         "generation_started_at": "2026-06-17T20:16:06.935957Z",
-        "generation_version": "2026-06-17T20-16-06Z",
-        "json_path": "nubjuk/2026-06-17T20-16-06Z/nubjuk.json",
-        "model_path": "nubjuk/2026-06-17T20-16-06Z/nubjuk.tflite",
+        "generation_version": "v1",
+        "json_path": "nubjuk/v1/nubjuk.json",
+        "model_path": "nubjuk/v1/nubjuk.tflite",
         "model_sha256": "476d1e5c8a9c1f61607e9a17b4527a44036a95078e33d143ddd10f5a61313feb"
       },
       "artifact_contract": {
@@ -1124,8 +1124,8 @@
       },
       "description": "넙죽 wakeword model",
       "id": "nubjuk",
-      "metadata_path": "nubjuk/2026-06-17T20-16-06Z/nubjuk.json",
-      "metadata_sha256": "db044286f994cbd3e5072862cd08cb729cb8ec9d76d7680a1aed1cdbee52ca6f",
+      "metadata_path": "nubjuk/v1/nubjuk.json",
+      "metadata_sha256": "66d8bd21231ffc33c49bd02fadd0862f2b9fedac48af9715cac0fc02c81f35e8",
       "metrics": {
         "false_accept_rate": 0.0,
         "false_accepts_per_hour": 0.0,
@@ -1138,7 +1138,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "nubjuk/2026-06-17T20-16-06Z/nubjuk.tflite",
+      "model_path": "nubjuk/v1/nubjuk.tflite",
       "model_sha256": "476d1e5c8a9c1f61607e9a17b4527a44036a95078e33d143ddd10f5a61313feb",
       "name": "넙죽",
       "request": {
@@ -1162,7 +1162,7 @@
         "training_duration_minutes": 3.69,
         "training_duration_seconds": 221.222
       },
-      "version": "2026-06-17T20-16-06Z",
+      "version": "v1",
       "wakeword": {
         "display": "넙죽",
         "language": "ko",
@@ -1173,9 +1173,9 @@
       "artifact": {
         "generation_start_date": "2026-06-17",
         "generation_started_at": "2026-06-17T20:08:04.666073Z",
-        "generation_version": "2026-06-17T20-08-04Z",
-        "json_path": "workstart/2026-06-17T20-08-04Z/workstart.json",
-        "model_path": "workstart/2026-06-17T20-08-04Z/workstart.tflite",
+        "generation_version": "v1",
+        "json_path": "workstart/v1/workstart.json",
+        "model_path": "workstart/v1/workstart.tflite",
         "model_sha256": "8f12dfd34cfe61b37d72757f55f47057ecde6d0a5cbab77b933a325291036cb4"
       },
       "artifact_contract": {
@@ -1215,8 +1215,8 @@
       },
       "description": "업무시작 wakeword model",
       "id": "workstart",
-      "metadata_path": "workstart/2026-06-17T20-08-04Z/workstart.json",
-      "metadata_sha256": "d71d16a7d9c8334c17f56ec9bb5a2021b82f5cfeecf8eb97f38532b208df7726",
+      "metadata_path": "workstart/v1/workstart.json",
+      "metadata_sha256": "6cf0b3272c3153ecd443b891b5e6de30cfae1c0974bb01fa12da30ff2349e31c",
       "metrics": {
         "false_accept_rate": 0.00431,
         "false_accepts_per_hour": 7.87195,
@@ -1229,7 +1229,7 @@
         "raw_positive_total": 20,
         "recall": 0.95
       },
-      "model_path": "workstart/2026-06-17T20-08-04Z/workstart.tflite",
+      "model_path": "workstart/v1/workstart.tflite",
       "model_sha256": "8f12dfd34cfe61b37d72757f55f47057ecde6d0a5cbab77b933a325291036cb4",
       "name": "업무시작",
       "request": {
@@ -1253,7 +1253,7 @@
         "training_duration_minutes": 4.18,
         "training_duration_seconds": 250.909
       },
-      "version": "2026-06-17T20-08-04Z",
+      "version": "v1",
       "wakeword": {
         "display": "업무시작",
         "language": "ko",

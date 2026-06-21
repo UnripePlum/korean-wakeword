@@ -96,14 +96,14 @@ This section is regenerated from `wake_word_manifest.json` when models are publi
 <!-- KWW:PERFORMANCE_TABLE_START -->
 | Wakeword | Slug | Generation | Recall | False accept rate | False accepts/hour | Cutoff | Training |
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| 바둑이 | `baduki` | `2026-06-17T21-08-48Z` | 95.0% | 0.00% | 0 | 1 | 4.21 min |
-| 변신 | `byeonsin` | `2026-06-18T08-45-39Z` | 95.0% | 0.00% | 0 | 1 | 3.92 min |
-| 개발모드 | `gaebalmodeu` | `2026-06-18T15-23-36Z` | 95.0% | 0.00% | 0 | 1 | 4.84 min |
-| 가재모드 | `gajaemode` | `2026-06-18T20-03-01Z` | 93.0% | 0.00% | 0 | 0.999 | 14.34 min |
-| 게임모드 | `geimmodeu` | `2026-06-18T20-03-02Z` | 95.8% | 0.00% | 0 | 0.955 | 7.07 min |
-| 자비스 | `jarvis` | `2026-06-17T19-55-59Z` | 95.0% | 0.43% | 7.904 | 1 | 4.29 min |
-| 넙죽 | `nubjuk` | `2026-06-17T20-16-06Z` | 95.0% | 0.00% | 0 | 1 | 3.69 min |
-| 업무시작 | `workstart` | `2026-06-17T20-08-04Z` | 95.0% | 0.43% | 7.872 | 0.62 | 4.18 min |
+| 바둑이 | `baduki` | `v1` | 95.0% | 0.00% | 0 | 1 | 4.21 min |
+| 변신 | `byeonsin` | `v2` | 95.0% | 0.00% | 0 | 1 | 3.92 min |
+| 개발모드 | `gaebalmodeu` | `v3` | 95.0% | 0.00% | 0 | 1 | 4.84 min |
+| 가재모드 | `gajaemode` | `v2` | 93.0% | 0.00% | 0 | 0.999 | 14.34 min |
+| 게임모드 | `geimmodeu` | `v3` | 95.8% | 0.00% | 0 | 0.955 | 7.07 min |
+| 자비스 | `jarvis` | `v1` | 95.0% | 0.43% | 7.904 | 1 | 4.29 min |
+| 넙죽 | `nubjuk` | `v1` | 95.0% | 0.00% | 0 | 1 | 3.69 min |
+| 업무시작 | `workstart` | `v1` | 95.0% | 0.43% | 7.872 | 0.62 | 4.18 min |
 <!-- KWW:PERFORMANCE_TABLE_END -->
 
 ### Metric Definitions

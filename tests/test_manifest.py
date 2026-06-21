@@ -16,10 +16,10 @@ def valid_model_metadata(
     slug="jarvis",
     display="자비스",
     date="2026-06-02",
-    version=None,
+    version="v1",
+    started_at=None,
 ):
-    artifact_segment = version or date
-    metadata = {
+    return {
         "schema_version": 1,
         "wakeword": {
             "display": display,
@@ -28,8 +28,10 @@ def valid_model_metadata(
         },
         "artifact": {
             "generation_start_date": date,
-            "model_path": f"{slug}/{artifact_segment}/{slug}.tflite",
-            "json_path": f"{slug}/{artifact_segment}/{slug}.json",
+            "generation_started_at": started_at or f"{date}T00:00:00Z",
+            "generation_version": version,
+            "model_path": f"{slug}/{version}/{slug}.tflite",
+            "json_path": f"{slug}/{version}/{slug}.json",
         },
         "trainer": {
             "trainer_version": "0.1.0",
@@ -57,12 +59,6 @@ def valid_model_metadata(
             "source": "threads",
         },
     }
-    if version is not None:
-        metadata["artifact"]["generation_version"] = version
-        metadata["artifact"]["generation_started_at"] = (
-            f"{version[:10]}T{version[11:13]}:{version[14:16]}:{version[17:19]}Z"
-        )
-    return metadata
 
 
 def write_artifact(
@@ -70,11 +66,10 @@ def write_artifact(
     slug="jarvis",
     display="자비스",
     date="2026-06-02",
-    version=None,
+    version="v1",
     metadata=None,
 ):
-    artifact_segment = version or date
-    artifact_dir = Path(root) / slug / artifact_segment
+    artifact_dir = Path(root) / slug / version
     artifact_dir.mkdir(parents=True)
     data = (
         metadata
@@ -107,52 +102,56 @@ class ManifestTests(unittest.TestCase):
             )
             self.assertEqual(
                 manifest["models"][0]["artifact"]["model_path"],
-                "jarvis/2026-06-02/jarvis.tflite",
+                "jarvis/v1/jarvis.tflite",
             )
             self.assertEqual(manifest["models"][0]["id"], "jarvis")
             self.assertEqual(manifest["models"][0]["name"], "자비스")
-            self.assertEqual(manifest["models"][0]["version"], "2026-06-02")
+            self.assertEqual(manifest["models"][0]["version"], "v1")
             self.assertEqual(
                 manifest["models"][0]["description"],
                 "자비스 wakeword model",
             )
             self.assertEqual(
                 manifest["models"][0]["metadata_path"],
-                "jarvis/2026-06-02/jarvis.json",
+                "jarvis/v1/jarvis.json",
             )
             self.assertEqual(
                 manifest["models"][0]["metadata_sha256"],
                 hashlib.sha256(
-                    (Path(tmp) / "jarvis/2026-06-02/jarvis.json").read_bytes()
+                    (Path(tmp) / "jarvis/v1/jarvis.json").read_bytes()
                 ).hexdigest(),
             )
             self.assertEqual(
                 manifest["models"][0]["model_path"],
-                "jarvis/2026-06-02/jarvis.tflite",
+                "jarvis/v1/jarvis.tflite",
             )
             self.assertEqual(
                 manifest["models"][0]["model_sha256"],
                 hashlib.sha256(b"model").hexdigest(),
             )
 
-    def test_builds_manifest_from_timestamped_artifact_version(self):
+    def test_builds_manifest_preserves_generation_metadata(self):
         with tempfile.TemporaryDirectory() as tmp:
-            write_artifact(tmp, version="2026-06-02T08-33-12Z")
+            write_artifact(
+                tmp,
+                version="v2",
+                metadata=valid_model_metadata(
+                    version="v2",
+                    started_at="2026-06-02T08:33:12Z",
+                ),
+            )
 
             manifest = build_manifest(Path(tmp))
 
             artifact = manifest["models"][0]["artifact"]
             self.assertEqual(artifact["generation_start_date"], "2026-06-02")
             self.assertEqual(artifact["generation_started_at"], "2026-06-02T08:33:12Z")
-            self.assertEqual(artifact["generation_version"], "2026-06-02T08-33-12Z")
+            self.assertEqual(artifact["generation_version"], "v2")
             self.assertEqual(
                 artifact["model_path"],
-                "jarvis/2026-06-02T08-33-12Z/jarvis.tflite",
+                "jarvis/v2/jarvis.tflite",
             )
-            self.assertEqual(
-                manifest["models"][0]["version"],
-                "2026-06-02T08-33-12Z",
-            )
+            self.assertEqual(manifest["models"][0]["version"], "v2")
 
     def test_write_manifest_outputs_canonical_json(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -193,7 +192,7 @@ class ManifestTests(unittest.TestCase):
 
     def test_rejects_missing_model_file(self):
         with tempfile.TemporaryDirectory() as tmp:
-            artifact_dir = Path(tmp) / "jarvis" / "2026-06-02"
+            artifact_dir = Path(tmp) / "jarvis" / "v1"
             artifact_dir.mkdir(parents=True)
             (artifact_dir / "jarvis.json").write_text(
                 json.dumps(valid_model_metadata(), ensure_ascii=False),
@@ -203,9 +202,9 @@ class ManifestTests(unittest.TestCase):
             with self.assertRaisesRegex(ManifestError, "missing model file"):
                 build_manifest(Path(tmp))
 
-    def test_rejects_artifact_like_directory_with_invalid_generation_date(self):
+    def test_rejects_artifact_like_directory_with_invalid_version(self):
         with tempfile.TemporaryDirectory() as tmp:
-            artifact_dir = Path(tmp) / "jarvis" / "2026-6-2"
+            artifact_dir = Path(tmp) / "jarvis" / "2026-06-02"
             artifact_dir.mkdir(parents=True)
             (artifact_dir / "jarvis.json").write_text(
                 json.dumps(valid_model_metadata(), ensure_ascii=False),
@@ -216,9 +215,9 @@ class ManifestTests(unittest.TestCase):
             with self.assertRaisesRegex(ManifestError, "generation_version"):
                 build_manifest(Path(tmp))
 
-    def test_rejects_invalid_generation_date_when_directory_contains_any_json(self):
+    def test_rejects_invalid_version_when_directory_contains_any_json(self):
         with tempfile.TemporaryDirectory() as tmp:
-            artifact_dir = Path(tmp) / "jarvis" / "2026-6-2"
+            artifact_dir = Path(tmp) / "jarvis" / "v0"
             artifact_dir.mkdir(parents=True)
             (artifact_dir / "other.json").write_text(
                 json.dumps({"schema_version": 1}), encoding="utf-8"
@@ -227,14 +226,11 @@ class ManifestTests(unittest.TestCase):
             with self.assertRaisesRegex(ManifestError, "generation_version"):
                 build_manifest(Path(tmp))
 
-    def test_rejects_timestamped_artifact_missing_generation_version(self):
+    def test_rejects_artifact_missing_generation_version(self):
         with tempfile.TemporaryDirectory() as tmp:
             metadata = valid_model_metadata()
-            write_artifact(
-                tmp,
-                version="2026-06-02T08-33-12Z",
-                metadata=metadata,
-            )
+            metadata["artifact"].pop("generation_version")
+            write_artifact(tmp, metadata=metadata)
 
             with self.assertRaisesRegex(ManifestError, "generation_version"):
                 build_manifest(Path(tmp))

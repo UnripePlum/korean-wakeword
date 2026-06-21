@@ -14,10 +14,10 @@ def valid_model_metadata(
     slug="jarvis",
     display="자비스",
     date="2026-06-02",
-    version=None,
+    version="v1",
+    started_at=None,
 ):
-    artifact_segment = version or date
-    metadata = {
+    return {
         "schema_version": 1,
         "wakeword": {
             "display": display,
@@ -26,8 +26,10 @@ def valid_model_metadata(
         },
         "artifact": {
             "generation_start_date": date,
-            "model_path": f"{slug}/{artifact_segment}/{slug}.tflite",
-            "json_path": f"{slug}/{artifact_segment}/{slug}.json",
+            "generation_started_at": started_at or f"{date}T00:00:00Z",
+            "generation_version": version,
+            "model_path": f"{slug}/{version}/{slug}.tflite",
+            "json_path": f"{slug}/{version}/{slug}.json",
         },
         "trainer": {
             "trainer_version": "0.1.0",
@@ -55,12 +57,6 @@ def valid_model_metadata(
             "source": "threads",
         },
     }
-    if version is not None:
-        metadata["artifact"]["generation_version"] = version
-        metadata["artifact"]["generation_started_at"] = (
-            f"{version[:10]}T{version[11:13]}:{version[14:16]}:{version[17:19]}Z"
-        )
-    return metadata
 
 
 def write_artifact(
@@ -68,10 +64,10 @@ def write_artifact(
     slug="jarvis",
     display="자비스",
     date="2026-06-02",
-    version=None,
+    version="v1",
+    started_at=None,
 ):
-    artifact_segment = version or date
-    artifact_dir = Path(root) / slug / artifact_segment
+    artifact_dir = Path(root) / slug / version
     artifact_dir.mkdir(parents=True)
     (artifact_dir / f"{slug}.json").write_text(
         json.dumps(
@@ -80,6 +76,7 @@ def write_artifact(
                 display=display,
                 date=date,
                 version=version,
+                started_at=started_at,
             ),
             ensure_ascii=False,
         ),
@@ -115,9 +112,9 @@ class ManifestCliTests(unittest.TestCase):
             )
             self.assertEqual(manifest["model_count"], 1)
 
-    def test_timestamped_artifact_write_then_check_round_trip(self):
+    def test_versioned_artifact_write_then_check_round_trip(self):
         with tempfile.TemporaryDirectory() as tmp:
-            write_artifact(tmp, version="2026-06-02T08-33-12Z")
+            write_artifact(tmp, version="v2", started_at="2026-06-02T08:33:12Z")
 
             write_result = run_cli("--repo-root", tmp, "--write")
             self.assertEqual(write_result.returncode, 0, write_result.stderr)
@@ -129,7 +126,7 @@ class ManifestCliTests(unittest.TestCase):
                 (Path(tmp) / "wake_word_manifest.json").read_text(encoding="utf-8")
             )
             artifact = manifest["models"][0]["artifact"]
-            self.assertEqual(artifact["generation_version"], "2026-06-02T08-33-12Z")
+            self.assertEqual(artifact["generation_version"], "v2")
 
     def test_check_rejects_noncanonical_manifest_file(self):
         with tempfile.TemporaryDirectory() as tmp:

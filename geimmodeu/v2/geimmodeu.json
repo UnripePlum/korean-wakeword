@@ -1,28 +1,28 @@
 {
   "schema_version": 1,
   "wakeword": {
-    "display": "개발모드",
-    "slug": "gaebalmodeu",
+    "display": "게임모드",
+    "slug": "geimmodeu",
     "language": "ko"
   },
   "artifact": {
     "generation_start_date": "2026-06-18",
-    "generation_started_at": "2026-06-18T15:23:36.501846Z",
-    "generation_version": "2026-06-18T15-23-36Z",
-    "model_path": "gaebalmodeu/2026-06-18T15-23-36Z/gaebalmodeu.tflite",
-    "json_path": "gaebalmodeu/2026-06-18T15-23-36Z/gaebalmodeu.json",
-    "model_sha256": "8a210431468f0a496a0d06e05ddf84f4511b61ab50b1631df4b8944ccfd3076f"
+    "generation_started_at": "2026-06-18T04:55:23.401823Z",
+    "generation_version": "v2",
+    "model_path": "geimmodeu/v2/geimmodeu.tflite",
+    "json_path": "geimmodeu/v2/geimmodeu.json",
+    "model_sha256": "9841717db73d4219e885c66c3779d3b9683785b1e6f1024eb4ec890799ef2c80"
   },
   "trainer": {
     "trainer_version": "0.1.0",
     "source": "UnripePlum/korean-wakeword-trainer",
-    "training_duration_seconds": 290.356,
-    "training_duration_minutes": 4.84
+    "training_duration_seconds": 274.083,
+    "training_duration_minutes": 4.57
   },
   "data_generation": {
     "tts_provider": "qwen",
     "tts_model": "Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
-    "positive_sample_count": 303,
+    "positive_sample_count": 330,
     "voice_variant_count": 4
   },
   "metrics": {
@@ -33,12 +33,12 @@
     "raw_positive_detected": 19,
     "raw_positive_total": 20,
     "raw_negative_detections": 0,
-    "raw_negative_total": 400,
-    "hard_negative_sample_count": 400,
-    "hard_negative_bank_sample_count": 480
+    "raw_negative_total": 232,
+    "hard_negative_sample_count": 232,
+    "hard_negative_bank_sample_count": 232
   },
   "runtime": {
-    "probability_cutoff": 1.0,
+    "probability_cutoff": 0.99,
     "sliding_window_size": 7,
     "max_detection_rms": 0.3,
     "min_detection_crest_factor": 2.0,
@@ -47,8 +47,8 @@
     "minimum_esphome_version": "2024.7"
   },
   "request": {
-    "prod_issue": 9,
-    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/9",
+    "prod_issue": 13,
+    "prod_issue_url": "https://github.com/UnripePlum/korean-wakeword/issues/13",
     "source": "github"
   },
   "artifact_contract": {
