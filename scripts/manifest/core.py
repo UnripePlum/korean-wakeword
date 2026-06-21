@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
+import os
 import re
 from datetime import date, datetime, timezone
 from pathlib import Path, PurePosixPath
@@ -12,7 +13,11 @@ from typing import Any
 MANIFEST_NAME = "wake_word_manifest.json"
 MANIFEST_SCHEMA_VERSION = 1
 MODEL_SCHEMA_VERSION = 1
-PUBLIC_BASE_URL = "https://raw.githubusercontent.com/UnripePlum/korean-wakeword/main"
+PUBLIC_BASE_URL = os.environ.get("KWW_MANIFEST_BASE_URL") or (
+    "https://raw.githubusercontent.com/"
+    + (os.environ.get("PROD_REPO") or "UnripePlum/korean-wakeword")
+    + "/main"
+)
 
 RESERVED_ROOT_DIRECTORIES = {
     ".git",
