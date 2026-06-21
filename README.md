@@ -27,7 +27,7 @@ Korean Wakeword is a public catalog for Korean micro wake word requests and publ
 
 1. Open a new GitHub Issue.
 
-   [Request a wake word](https://github.com/UnripePlum/korean-wakeword/issues/new?title=%EC%9A%94%EC%B2%AD%3A%EC%9E%90%EB%B9%84%EC%8A%A4)
+   [Request a wake word](https://github.com/UnripePlum/korean-wakeword/issues/new?title=%EC%9A%94%EC%B2%AD%3A%20)
 
 2. Write the issue title or body like this:
 
