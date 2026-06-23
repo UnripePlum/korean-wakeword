@@ -100,7 +100,7 @@ This section is regenerated from `wake_word_manifest.json` when models are publi
 | 변신 | `byeonsin` | `v2` | 95.0% | 0.00% | 0 | 1 | 3.92 min |
 | 개발모드 | `gaebalmodeu` | `v3` | 95.0% | 0.00% | 0 | 1 | 4.84 min |
 | 가재모드 | `gajaemode` | `v2` | 93.0% | 0.00% | 0 | 0.999 | 14.34 min |
-| 게임모드 | `geimmodeu` | `v3` | 95.8% | 0.00% | 0 | 0.955 | 7.07 min |
+| 게임모드 | `geimmodeu` | `v4` | 94.8% | 0.00% | 0 | 0.99 | 7.07 min |
 | 자비스 | `jarvis` | `v1` | 95.0% | 0.43% | 7.904 | 1 | 4.29 min |
 | 지니야 | `jiniya` | `v1` | 95.0% | 0.00% | 0 | 1 | 4.52 min |
 | 넙죽 | `nubjuk` | `v1` | 95.0% | 0.00% | 0 | 1 | 3.69 min |
