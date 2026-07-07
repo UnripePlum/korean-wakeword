@@ -106,6 +106,7 @@ This section is regenerated from `wake_word_manifest.json` when models are publi
 | 넙죽 | `nubjuk` | `v1` | 95.0% | 0.00% | 0 | 1 | 3.69 min |
 | 오케이 구글 | `okeigugeul` | `v1` | 100.0% | 0.00% | 0 | 1 | 4.25 min |
 | 서핑모드 | `seopingmodeu` | `v1` | 95.0% | 0.00% | 0 | 1 | 35.95 min |
+| surfing mode | `surfingmode` | `v1` | 95.0% | 0.00% | 0 | 0.81 | 28.77 min |
 | 테스트 | `teseuteu` | `v1` | 95.0% | 0.43% | 7.814 | 0.96 | 32.82 min |
 | 업무시작 | `workstart` | `v1` | 95.0% | 0.43% | 7.872 | 0.62 | 4.18 min |
 <!-- KWW:PERFORMANCE_TABLE_END -->

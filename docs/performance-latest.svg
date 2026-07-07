@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="540" viewBox="0 0 1120 540" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="574" viewBox="0 0 1120 574" role="img" aria-labelledby="title desc">
 <title>Latest Korean wakeword performance</title>
 <desc>Latest model metrics generated from wake_word_manifest.json</desc>
 <rect width="100%" height="100%" fill="#f8fafc"/>
@@ -105,21 +105,30 @@
 <text x="798" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">35.95 min</text>
 <text x="928" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="452" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">테스트</text>
-<text x="188" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">teseuteu</text>
+<text x="28" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">surfing mode</text>
+<text x="188" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">surfingmode</text>
 <text x="318" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
-<text x="438" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
-<text x="548" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.814</text>
-<text x="678" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.96</text>
-<text x="798" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">32.82 min</text>
+<text x="438" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
+<text x="548" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
+<text x="678" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.81</text>
+<text x="798" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">28.77 min</text>
 <text x="928" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="486" width="1080" height="30" rx="6" fill="#f1f5f9"/>
-<text x="28" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">업무시작</text>
-<text x="188" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">workstart</text>
+<text x="28" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">테스트</text>
+<text x="188" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">teseuteu</text>
 <text x="318" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
 <text x="438" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
-<text x="548" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.872</text>
-<text x="678" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.62</text>
-<text x="798" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.18 min</text>
+<text x="548" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.814</text>
+<text x="678" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.96</text>
+<text x="798" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">32.82 min</text>
 <text x="928" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
+<rect x="20" y="520" width="1080" height="30" rx="6" fill="#ffffff"/>
+<text x="28" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">업무시작</text>
+<text x="188" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">workstart</text>
+<text x="318" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
+<text x="438" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
+<text x="548" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.872</text>
+<text x="678" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.62</text>
+<text x="798" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.18 min</text>
+<text x="928" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 </svg>
