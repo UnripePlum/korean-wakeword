@@ -98,6 +98,7 @@ This section is regenerated from `wake_word_manifest.json` when models are publi
 | --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
 | 바둑이 | `baduki` | `v1` | 95.0% | 0.00% | 0 | 1 | 4.21 min |
 | 변신 | `byeonsin` | `v2` | 95.0% | 0.00% | 0 | 1 | 3.92 min |
+| dev mode | `devmode` | `v1` | 95.0% | 0.43% | 7.783 | 0.69 | 37.32 min |
 | 개발모드 | `gaebalmodeu` | `v3` | 95.0% | 0.00% | 0 | 1 | 4.84 min |
 | 가재모드 | `gajaemode` | `v2` | 93.0% | 0.00% | 0 | 0.999 | 14.34 min |
 | 게임모드 | `geimmodeu` | `v4` | 94.8% | 0.00% | 0 | 0.99 | 7.07 min |

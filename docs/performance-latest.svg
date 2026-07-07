@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="574" viewBox="0 0 1120 574" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="608" viewBox="0 0 1120 608" role="img" aria-labelledby="title desc">
 <title>Latest Korean wakeword performance</title>
 <desc>Latest model metrics generated from wake_word_manifest.json</desc>
 <rect width="100%" height="100%" fill="#f8fafc"/>
@@ -33,102 +33,111 @@
 <text x="798" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">3.92 min</text>
 <text x="928" y="166" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v2</text>
 <rect x="20" y="180" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">개발모드</text>
-<text x="188" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">gaebalmodeu</text>
+<text x="28" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">dev mode</text>
+<text x="188" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">devmode</text>
 <text x="318" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
-<text x="438" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
-<text x="548" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
-<text x="678" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
-<text x="798" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.84 min</text>
-<text x="928" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v3</text>
+<text x="438" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
+<text x="548" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.783</text>
+<text x="678" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.69</text>
+<text x="798" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">37.32 min</text>
+<text x="928" y="200" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="214" width="1080" height="30" rx="6" fill="#f1f5f9"/>
-<text x="28" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">가재모드</text>
-<text x="188" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">gajaemode</text>
-<text x="318" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">93.0%</text>
+<text x="28" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">개발모드</text>
+<text x="188" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">gaebalmodeu</text>
+<text x="318" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
 <text x="438" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
 <text x="548" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
-<text x="678" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.999</text>
-<text x="798" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">14.34 min</text>
-<text x="928" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v2</text>
+<text x="678" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
+<text x="798" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.84 min</text>
+<text x="928" y="234" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v3</text>
 <rect x="20" y="248" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">게임모드</text>
-<text x="188" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">geimmodeu</text>
-<text x="318" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">94.8%</text>
+<text x="28" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">가재모드</text>
+<text x="188" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">gajaemode</text>
+<text x="318" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">93.0%</text>
 <text x="438" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
 <text x="548" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
-<text x="678" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.99</text>
-<text x="798" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.07 min</text>
-<text x="928" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v4</text>
+<text x="678" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.999</text>
+<text x="798" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">14.34 min</text>
+<text x="928" y="268" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v2</text>
 <rect x="20" y="282" width="1080" height="30" rx="6" fill="#f1f5f9"/>
-<text x="28" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">자비스</text>
-<text x="188" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">jarvis</text>
-<text x="318" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
-<text x="438" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
-<text x="548" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.904</text>
-<text x="678" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
-<text x="798" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.29 min</text>
-<text x="928" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
+<text x="28" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">게임모드</text>
+<text x="188" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">geimmodeu</text>
+<text x="318" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">94.8%</text>
+<text x="438" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
+<text x="548" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
+<text x="678" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.99</text>
+<text x="798" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.07 min</text>
+<text x="928" y="302" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v4</text>
 <rect x="20" y="316" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">지니야</text>
-<text x="188" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">jiniya</text>
+<text x="28" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">자비스</text>
+<text x="188" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">jarvis</text>
 <text x="318" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
-<text x="438" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
-<text x="548" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
+<text x="438" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
+<text x="548" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.904</text>
 <text x="678" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
-<text x="798" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.52 min</text>
+<text x="798" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.29 min</text>
 <text x="928" y="336" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="350" width="1080" height="30" rx="6" fill="#f1f5f9"/>
-<text x="28" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">넙죽</text>
-<text x="188" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">nubjuk</text>
+<text x="28" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">지니야</text>
+<text x="188" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">jiniya</text>
 <text x="318" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
 <text x="438" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
 <text x="548" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
-<text x="798" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">3.69 min</text>
+<text x="798" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.52 min</text>
 <text x="928" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="384" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">오케이 구글</text>
-<text x="188" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">okeigugeul</text>
-<text x="318" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">100.0%</text>
+<text x="28" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">넙죽</text>
+<text x="188" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">nubjuk</text>
+<text x="318" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
 <text x="438" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
 <text x="548" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
-<text x="798" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.25 min</text>
+<text x="798" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">3.69 min</text>
 <text x="928" y="404" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="418" width="1080" height="30" rx="6" fill="#f1f5f9"/>
-<text x="28" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">서핑모드</text>
-<text x="188" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">seopingmodeu</text>
-<text x="318" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
+<text x="28" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">오케이 구글</text>
+<text x="188" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">okeigugeul</text>
+<text x="318" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">100.0%</text>
 <text x="438" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
 <text x="548" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
 <text x="678" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
-<text x="798" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">35.95 min</text>
+<text x="798" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.25 min</text>
 <text x="928" y="438" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="452" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">surfing mode</text>
-<text x="188" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">surfingmode</text>
+<text x="28" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">서핑모드</text>
+<text x="188" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">seopingmodeu</text>
 <text x="318" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
 <text x="438" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
 <text x="548" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
-<text x="678" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.81</text>
-<text x="798" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">28.77 min</text>
+<text x="678" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">1</text>
+<text x="798" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">35.95 min</text>
 <text x="928" y="472" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="486" width="1080" height="30" rx="6" fill="#f1f5f9"/>
-<text x="28" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">테스트</text>
-<text x="188" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">teseuteu</text>
+<text x="28" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">surfing mode</text>
+<text x="188" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">surfingmode</text>
 <text x="318" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
-<text x="438" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
-<text x="548" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.814</text>
-<text x="678" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.96</text>
-<text x="798" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">32.82 min</text>
+<text x="438" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.00%</text>
+<text x="548" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0</text>
+<text x="678" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.81</text>
+<text x="798" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">28.77 min</text>
 <text x="928" y="506" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 <rect x="20" y="520" width="1080" height="30" rx="6" fill="#ffffff"/>
-<text x="28" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">업무시작</text>
-<text x="188" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">workstart</text>
+<text x="28" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">테스트</text>
+<text x="188" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">teseuteu</text>
 <text x="318" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
 <text x="438" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
-<text x="548" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.872</text>
-<text x="678" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.62</text>
-<text x="798" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.18 min</text>
+<text x="548" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.814</text>
+<text x="678" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.96</text>
+<text x="798" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">32.82 min</text>
 <text x="928" y="540" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
+<rect x="20" y="554" width="1080" height="30" rx="6" fill="#f1f5f9"/>
+<text x="28" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">업무시작</text>
+<text x="188" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">workstart</text>
+<text x="318" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">95.0%</text>
+<text x="438" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.43%</text>
+<text x="548" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">7.872</text>
+<text x="678" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">0.62</text>
+<text x="798" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">4.18 min</text>
+<text x="928" y="574" font-family="Arial, sans-serif" font-size="12" font-weight="400" fill="#0f172a">v1</text>
 </svg>
